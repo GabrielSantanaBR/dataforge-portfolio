@@ -1,33 +1,39 @@
-# Security
+# Segurança — MATRIZ
 
-This repository is a static portfolio published with GitHub Pages. It has no application database, server-side authentication or privileged backend exposed by the portfolio itself.
+Este documento descreve o site institucional estático, não a segurança de cada aplicação exibida no portfólio.
 
-## Current controls
+## Relatar uma vulnerabilidade
 
-- Restrictive Content Security Policy on every public HTML page.
-- JavaScript runtime restricted to same-origin files (`script-src 'self'`).
-- No third-party animation runtime: visual motion uses native Web Animations API, IntersectionObserver and Canvas.
-- Styles are same-origin only; inline `style` attributes are rejected by CI.
-- Inline `<script>` blocks are rejected by CI.
-- Object, frame, media and worker sources are disabled in the page CSP where not required.
-- Contact form requests are restricted to `https://api.web3forms.com` only on the contact page.
-- Form field length limits, browser validation, contact-format validation and honeypot anti-spam field.
-- Contact payload normalization removes control characters from user-entered text.
-- Contact submission uses a 12-second timeout, a short client-side cooldown, `credentials: 'omit'`, `cache: 'no-store'` and `referrerPolicy: 'no-referrer'`.
-- External links opened in a new tab use `noopener noreferrer`.
-- No sensitive API, database or authentication credentials should be committed to this repository.
-- GitHub Actions validates JavaScript syntax, required files, local references, CSP directives, safe markup, project routes, sitemap metadata and common privileged-secret patterns before Pages deployment.
-- Animation respects `prefers-reduced-motion`, limits canvas DPR/particle density and pauses the ambient canvas when the tab is hidden.
-- A standard disclosure file is published at `/.well-known/security.txt`.
+Use https://gabrielsantanabr.github.io/dataforge-portfolio/contact.html?service=evolucao ou o LinkedIn indicado no rodapé. Informe a URL, o comportamento e passos mínimos para reprodução. Não envie credenciais, dados privados ou informações pessoais de terceiros. Não há prazo de resposta ou programa de recompensa anunciado.
 
-## About the Web3Forms access key
+## Controles implementados
 
-The access key used by the public contact form is a client-side form identifier and is necessarily delivered to the browser. It must not be treated as a privileged server secret. Privileged credentials, private tokens, passwords and backend keys must never be stored in this repository.
+- CSP em todas as páginas: scripts, estilos, fontes e imagens locais; objetos, frames, workers e mídia bloqueados. Sem `unsafe-inline` ou `unsafe-eval`.
+- `connect-src` e `form-action` permitem apenas Web3Forms na página de contato; nas demais, são bloqueados.
+- Links externos abertos em nova aba incluem `noopener noreferrer`; metadados de referrer reduzem a exposição do caminho de origem.
+- Templates escapam conteúdo; parâmetros de URL são normalizados e aplicados por propriedades seguras, sem `innerHTML` ou redirecionamento aberto.
+- Contato com validação, campos limitados, honeypot, intervalo de 15 segundos, bloqueio simultâneo e timeout de 12 segundos. Erros não apagam os campos.
+- Payload de contato por lista permitida; credenciais e referrer são omitidos no fetch. Apenas `success: true` com HTTP de sucesso conduz à confirmação.
+- Verificações automáticas de rotas, anchors, IDs, markup, CSP, SEO, marca, assets e padrões comuns de credenciais precedem o deploy.
+- Sem dependências de execução, analytics, fontes externas ou armazenamento persistente de mensagens no navegador.
+- Build explícito publica somente HTML, assets e metadados. Servidor de desenvolvimento, fixtures, mocks e scripts de geração não são enviados ao Pages.
 
-## Platform limitation
+## Web3Forms
 
-GitHub Pages is a static hosting platform and this repository cannot configure every HTTP response header directly. The portfolio therefore uses a CSP meta policy for supported directives and keeps the application surface intentionally small. If the site later moves behind a configurable reverse proxy/CDN, security headers such as `frame-ancestors`, HSTS and `X-Content-Type-Options` should be configured at the HTTP response layer.
+O identificador incluído no formulário é um alias público de envio já existente no projeto; não é um token administrativo. Credenciais de conta, tokens GitHub, SMTP e outras chaves privilegiadas nunca devem ser incluídos no site.
 
-## Reporting
+Proteções do navegador podem ser contornadas por clientes externos. O provedor deve aplicar validação e controles contra abuso no servidor. Restrições por domínio e mecanismos adicionais dependem da conta/plano do provedor e não foram afirmados como configurados. A CSP não impede terceiros de reutilizarem um identificador público fora deste site.
 
-If you find a security issue in the portfolio, avoid publishing sensitive exploit details in a public issue. Use the contact channel listed at `/.well-known/security.txt`.
+Os testes automatizados e de interface utilizam respostas simuladas. A entrega na caixa de email depende do provedor, da configuração da conta e do destinatário. O site confirma aceitação pelo serviço, sem prometer entrega ou prazo de resposta.
+
+## Limites do GitHub Pages
+
+O site não controla livremente todos os cabeçalhos HTTP do GitHub Pages. A CSP em meta protege o documento depois de interpretada; `frame-ancestors` não funciona nesse formato e não está anunciado como proteção disponível. HSTS, cabeçalhos de cache e outras políticas de transporte dependem da hospedagem.
+
+Para uma futura hospedagem com controle de cabeçalhos, avaliar CSP por HTTP (incluindo `frame-ancestors`), `X-Content-Type-Options`, `Referrer-Policy` e `Permissions-Policy`, após testar os fluxos. Não relaxar a política apenas para adicionar trackers ou animações.
+
+## Dados e manutenção
+
+O site não tem login, banco de clientes ou área administrativa. A sessão armazena somente o timestamp da última tentativa de contato. Logs técnicos da hospedagem e retenção das mensagens pelo Web3Forms seguem seus próprios controles, descritos na política de privacidade.
+
+Revise a configuração do formulário e os links após alterações de hospedagem. Mantenha Node, Python e actions de CI atualizados. A inspeção do repertório registra um momento do código público e não certifica segurança dos projetos externos.

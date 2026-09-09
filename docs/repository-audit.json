@@ -1,0 +1,320 @@
+{
+  "inspected_at": "2026-09-08",
+  "public_count": 26,
+  "profile_excluded": "GabrielSantanaBR/GabrielSantanaBR",
+  "repertoire_count": 25,
+  "featured_count": 10,
+  "records": [
+    {
+      "repository": "clientflow",
+      "branch": "main",
+      "status": "Protótipo frontend",
+      "category": "Sistemas",
+      "featured": true,
+      "evidence": [
+        "README.md",
+        "app.js",
+        "docs/ARCHITECTURE.md"
+      ],
+      "commit": "398474d748ea79bded4f3faff6625fb803db5ae4",
+      "runtime_note": "ReferenceError: Cannot access clone before initialization; app.js calls loadState before the const clone assignment."
+    },
+    {
+      "repository": "decisionforge-ai",
+      "branch": "main",
+      "status": "Demo de portfólio",
+      "category": "IA",
+      "featured": true,
+      "evidence": [
+        "README.md",
+        "app/services/pipeline.py",
+        "app/main.py",
+        "pyproject.toml"
+      ],
+      "commit": "8deb5e9c2d1470aeaf1a7a9569b08f173517ba14"
+    },
+    {
+      "repository": "nossas-delicias-site",
+      "branch": "main",
+      "status": "Em evolução",
+      "category": "Sistemas",
+      "featured": true,
+      "evidence": [
+        "README.md",
+        "store/urls.py",
+        "store/views_management.py",
+        "requirements.txt"
+      ],
+      "commit": "f907b3d7efa8147d6fd5c84b524a6313f2734562"
+    },
+    {
+      "repository": "curtailment-intelligence",
+      "branch": "main",
+      "status": "Demo sintética",
+      "category": "IA",
+      "featured": true,
+      "evidence": [
+        "README.md",
+        "ml/modeling.py",
+        "app/services/optimizer.py",
+        "docs/PROJECT_STATUS.md"
+      ],
+      "commit": "09a968d2ebec45f4563974cda643a7c760bd6bbc"
+    },
+    {
+      "repository": "projeto_academia",
+      "branch": "feat/mvp",
+      "status": "MVP em branch",
+      "category": "Sistemas",
+      "featured": true,
+      "evidence": [
+        "README.md",
+        "package.json",
+        "src/lib/permissions.ts",
+        "src/lib/attention.ts",
+        "prisma/schema.prisma"
+      ],
+      "commit": "e667c0d1c36d94ba09bfaff0183257e9031ae92d"
+    },
+    {
+      "repository": "finance-manager",
+      "branch": "main",
+      "status": "Edição pública reduzida",
+      "category": "Sistemas",
+      "featured": true,
+      "evidence": [
+        "README.md",
+        "expenses/models.py",
+        "accounts/models.py",
+        "dashboard/views.py",
+        "requirements.txt"
+      ],
+      "commit": "9c424a3b0118e4804dcb012dff9667b64741598e"
+    },
+    {
+      "repository": "bakery-manager",
+      "branch": "main",
+      "status": "Demo em Excel",
+      "category": "Automação",
+      "featured": true,
+      "evidence": [
+        "README.md",
+        "main.py",
+        "demo/small-business-pricing-manager-demo.xlsx"
+      ],
+      "commit": "542ffcf17ff392488673f704d7f5d187323e128d"
+    },
+    {
+      "repository": "csv-sales-analyzer",
+      "branch": "main",
+      "status": "Demo de análise",
+      "category": "Dados",
+      "featured": true,
+      "evidence": [
+        "README.md",
+        "dashboard.py",
+        "src/analyzer.py",
+        "requirements.txt"
+      ],
+      "commit": "e31b131e63059265dcaa8adad44284fac7bffcb0"
+    },
+    {
+      "repository": "coffee_five_site",
+      "branch": "main",
+      "status": "Proposta de site",
+      "category": "Web",
+      "featured": true,
+      "evidence": [
+        "README.md",
+        "index.html",
+        "cardapio/index.html",
+        "assets/app.js"
+      ],
+      "commit": "31e6524e13c5acb20ab0cf3fb4affee1c269c1fc"
+    },
+    {
+      "repository": "projeto-petshop",
+      "branch": "main",
+      "status": "MVP de interface",
+      "category": "Web",
+      "featured": true,
+      "evidence": [
+        "README.md",
+        "package.json",
+        "src/App.tsx"
+      ],
+      "commit": "23fe77f3fd433f35cee981913dcc761940234072"
+    },
+    {
+      "repository": "institutional-site-template",
+      "branch": "main",
+      "status": "Template demonstrativo",
+      "category": "Web",
+      "featured": false,
+      "evidence": [
+        "README.md",
+        "package.json",
+        "app/acesso-interno/page.tsx",
+        "db/runtime.ts",
+        "lib/site-content.ts"
+      ],
+      "commit": "2c8230b19e4e8a0e5a05266e145d94ed175c0efa"
+    },
+    {
+      "repository": "riftpilot",
+      "branch": "main",
+      "status": "Experimental",
+      "category": "Backend",
+      "featured": false,
+      "evidence": [
+        "README.md",
+        "services/analytics/src/riftpilot_analytics/api/routes/live_game.py",
+        "services/analytics/pyproject.toml"
+      ],
+      "commit": "8c034b70cf414b26544afca8a15a0ed6f20be8dc"
+    },
+    {
+      "repository": "url-shortener-api",
+      "branch": "main",
+      "status": "Projeto de estudo",
+      "category": "Backend",
+      "featured": false,
+      "evidence": [
+        "README.md",
+        "api.py",
+        "database.py"
+      ],
+      "commit": "8406f0847fba5d05d167f2e084adc36dc7b9590c"
+    },
+    {
+      "repository": "hotmart_sites",
+      "branch": "main",
+      "status": "Site de produtos",
+      "category": "Web",
+      "featured": false,
+      "evidence": [
+        "README.md",
+        "index.html",
+        "analytics.js"
+      ],
+      "commit": "549a8ce52f1c2d6f36e9aa3ba1d4aa614ea50755"
+    },
+    {
+      "repository": "projeto_excel_DIO",
+      "branch": "main",
+      "status": "Estudo em Excel",
+      "category": "Estudos",
+      "featured": false,
+      "evidence": [
+        "README.md",
+        "Desafio_DIO_Simulador_Investimentos_FIIs.xlsx"
+      ],
+      "commit": "84a82db05437fc64769fabc902d0838b9ad8814b"
+    },
+    {
+      "repository": "Traducao_R_para_Python_UFF",
+      "branch": "main",
+      "status": "Estudo acadêmico",
+      "category": "Estudos",
+      "featured": false,
+      "evidence": [
+        "Codigos_traduzidos.py"
+      ],
+      "commit": "4c8b6c9b104880063d7384bb20f6666d234046dd"
+    },
+    {
+      "repository": "pequenos_projetos",
+      "branch": "main",
+      "status": "Exercícios",
+      "category": "Estudos",
+      "featured": false,
+      "evidence": [
+        "README.md",
+        "intermediario/sistema_com_arquivos.py"
+      ],
+      "commit": "687dbc2e24f50eeb58faedcaf871c3d9dbaddac1"
+    },
+    {
+      "repository": "Conta_Bancaria",
+      "branch": "main",
+      "status": "Exercício de lógica",
+      "category": "Estudos",
+      "featured": false,
+      "evidence": [
+        "README.md",
+        "Sistema_Bancario_V3.py"
+      ],
+      "commit": "4826dd6abb4b2314df42d7460e9c1ab78445926b"
+    },
+    {
+      "repository": "lab-natty-or-not",
+      "branch": "main",
+      "status": "Estudo DIO",
+      "category": "Estudos",
+      "featured": false,
+      "evidence": [
+        "README.md"
+      ],
+      "commit": "8f733b2172e685a58a3894c4b287b7643765269d"
+    },
+    {
+      "repository": "Sicma-JAVA",
+      "branch": "main",
+      "status": "Estrutura inicial",
+      "category": "Estudos",
+      "featured": false,
+      "evidence": [
+        "demo/demo/build.gradle",
+        "demo/demo/src/main/java/com/example/demo/DemoApplication.java"
+      ],
+      "commit": "2789716a66ca52175374c786d2b5a46d57cb3d17"
+    },
+    {
+      "repository": "Pluvia",
+      "branch": "main",
+      "status": "Estrutura inicial",
+      "category": "Estudos",
+      "featured": false,
+      "evidence": [
+        "project.godot"
+      ],
+      "commit": "fda1af66ff79a3cf6cc8185272e712db0cffc4b1"
+    },
+    {
+      "repository": "projeto-barbearia",
+      "branch": "main",
+      "status": "Repositório vazio",
+      "category": "Estudos",
+      "featured": false,
+      "evidence": []
+    },
+    {
+      "repository": "project-nomad",
+      "branch": "main",
+      "status": "Fork de terceiros",
+      "category": "Estudos",
+      "featured": false,
+      "evidence": []
+    },
+    {
+      "repository": "LibreSprite",
+      "branch": "main",
+      "status": "Fork de terceiros",
+      "category": "Estudos",
+      "featured": false,
+      "evidence": []
+    },
+    {
+      "repository": "dataforge-portfolio",
+      "branch": "main",
+      "status": "Este projeto",
+      "category": "Web",
+      "featured": false,
+      "evidence": [
+        "README.md",
+        "index.html"
+      ],
+      "commit": "1f74f08ce8d7b300ab5ffff7b72e354afc70ff83"
+    }
+  ]
+}

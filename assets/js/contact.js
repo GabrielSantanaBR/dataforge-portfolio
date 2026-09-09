@@ -1,0 +1,57 @@
+import { SERVICE_LABELS, LEGACY_SERVICES, cleanText, validateFields, createPayload, sendContact } from './contact-core.js';
+const form = document.getElementById('secure-contact-form');
+if (form) {
+  form.dataset.enhanced = 'true';
+  const status = document.getElementById('form-status');
+  const button = form.querySelector('[type=submit]');
+  const params = new URLSearchParams(location.search);
+  const requestedService = params.get('service');
+  const mapped = Object.hasOwn(SERVICE_LABELS,requestedService) ? requestedService : (Object.hasOwn(LEGACY_SERVICES,requestedService) ? LEGACY_SERVICES[requestedService] : undefined);
+  if (mapped) form.elements.service.value = mapped;
+  const project = cleanText(params.get('project'),100), plan = cleanText(params.get('plan'),60);
+  if (project || plan) form.elements.message.value = `Tenho interesse em ${project || 'uma solução'}${plan ? `, com ${plan} como referência` : ''}. Gostaria de conversar sobre o escopo. `;
+  const attemptKey = 'matriz-contact-attempt';
+  const getLast = () => { try { return Number(sessionStorage.getItem(attemptKey)) || 0; } catch { return 0; } };
+  const saveLast = value => { try { sessionStorage.setItem(attemptKey,String(value)); } catch { /* Private mode can disable storage. */ } };
+  let lastAttempt = getLast();
+  let sending = false;
+  const message = (text, state) => { status.textContent=text; status.dataset.state=state; };
+  const clearError = event => {
+    if (!event.target.name) return;
+    event.target.removeAttribute('aria-invalid');
+    const note = document.getElementById(`${event.target.id}-error`);
+    if (note) { note.hidden=true; note.textContent=''; }
+  };
+  form.addEventListener('input', clearError);
+  form.addEventListener('change', clearError);
+  form.addEventListener('submit', async event => {
+    event.preventDefault();
+    if (sending || form.elements.botcheck.checked) return;
+    const fields = Object.fromEntries(new FormData(form));
+    const errors = validateFields(fields);
+    for (const input of form.querySelectorAll('[aria-invalid]')) clearError({target:input});
+    for (const [name,text] of Object.entries(errors)) {
+      const input = form.elements[name], note = document.getElementById(`${name}-error`);
+      input.setAttribute('aria-invalid','true');
+      if (note) { note.textContent=text; note.hidden=false; }
+    }
+    if (Object.keys(errors).length || !form.reportValidity()) {
+      form.elements[Object.keys(errors)[0]]?.focus();
+      message('Confira os campos indicados antes de enviar.','error'); return;
+    }
+    if (Date.now()-lastAttempt < 15000) { message('Aguarde alguns segundos antes de tentar novamente.','error'); return; }
+    lastAttempt=Date.now();saveLast(lastAttempt);sending=true;
+    button.disabled=true;button.textContent='Enviando…';form.setAttribute('aria-busy','true');
+    message('Enviando sua mensagem.','pending');
+    try {
+      await sendContact(createPayload(fields,form.elements.access_key.value));
+      location.assign('thanks.html');
+    } catch (error) {
+      if (error.name === 'AbortError') message('O envio demorou mais que o esperado. Seus campos foram preservados. Tente novamente.','error');
+      else if (error.message === 'RATE_LIMIT') message('O serviço recebeu muitas tentativas. Aguarde um pouco e tente novamente.','error');
+      else message('Não foi possível enviar agora. Seus campos foram preservados. Tente novamente ou use o LinkedIn indicado nesta página.','error');
+    } finally {
+      sending=false;button.disabled=false;button.textContent='Enviar para a MATRIZ ↗';form.removeAttribute('aria-busy');
+    }
+  });
+}

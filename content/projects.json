@@ -1,0 +1,857 @@
+[
+  {
+    "repo": "clientflow",
+    "name": "ClientFlow",
+    "category": "Sistemas",
+    "status": "Protótipo frontend",
+    "featured": true,
+    "page": "clientflow.html",
+    "service": "sistemas",
+    "headline": "Uma operação de serviços. Um só lugar.",
+    "summary": "Agenda, clientes, serviços e orçamentos reunidos em um protótipo de interface.",
+    "problem": "Horários, clientes e orçamentos espalhados entre mensagens e anotações dificultam acompanhar o atendimento.",
+    "solution": "Um frontend com código para agenda, cadastro de clientes, catálogo de serviços, orçamentos e mensagens prontas. A inicialização precisa de uma correção antes de uma demonstração completa.",
+    "flow": [
+      [
+        "Receber",
+        "Uma solicitação de horário entra pela página de agendamento."
+      ],
+      [
+        "Organizar",
+        "Cliente, serviço e atendimento passam a fazer parte da mesma agenda."
+      ],
+      [
+        "Acompanhar",
+        "O responsável atualiza o status e prepara o próximo contato."
+      ]
+    ],
+    "features": [
+      "Agenda com criação, edição e status",
+      "Clientes e catálogo de serviços",
+      "Orçamentos e modelos de mensagens",
+      "Página pública de agendamento",
+      "Exportação e restauração da demo",
+      "Persistência local e PWA"
+    ],
+    "stack": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "localStorage",
+      "PWA"
+    ],
+    "architecture": "A interface e as regras da demonstração rodam no navegador. O armazenamento é local ao dispositivo; não existe sincronização entre equipes ou banco compartilhado nesta edição.",
+    "limits": "No teste de 08/09/2026, a abertura em uma sessão sem dados salvos revelou um erro de inicialização que impede o carregamento da demonstração. As capacidades descritas foram identificadas no código. O projeto utiliza dados fictícios e armazenamento local; não envia agendamentos a um negócio real nem implementa autenticação, banco compartilhado ou mensagens automáticas.",
+    "evolution": "Corrigir e testar a inicialização; depois conectar autenticação e banco compartilhado, múltiplos profissionais, lembretes e integrações oficiais de pagamentos e WhatsApp.",
+    "diagram": [
+      "Solicitação",
+      "Agenda",
+      "Atendimento"
+    ],
+    "evidence": [
+      "README.md",
+      "app.js",
+      "docs/ARCHITECTURE.md"
+    ],
+    "runtime_note": "ReferenceError: Cannot access clone before initialization; app.js calls loadState before the const clone assignment."
+  },
+  {
+    "repo": "decisionforge-ai",
+    "name": "DecisionForge AI",
+    "category": "IA",
+    "status": "Demo de portfólio",
+    "featured": true,
+    "page": "decisionforge-ai.html",
+    "service": "ia",
+    "headline": "Da planilha à leitura do negócio.",
+    "summary": "Qualidade de dados, anomalias, segmentos e previsões em um fluxo de análise explicável.",
+    "problem": "Arquivos de negócio acumulam dados, mas nem sempre revelam inconsistências, padrões ou sinais que precisam de atenção.",
+    "solution": "Um pipeline que recebe CSV/XLSX, verifica qualidade, calcula indicadores e aplica modelos de análise. Um dashboard apresenta os resultados e um assistente responde sobre a análise.",
+    "flow": [
+      [
+        "Importar",
+        "O arquivo é carregado e suas colunas são interpretadas."
+      ],
+      [
+        "Analisar",
+        "Módulos calculam qualidade, anomalias, segmentos, relações e previsão."
+      ],
+      [
+        "Interpretar",
+        "A interface organiza os sinais em uma leitura explicável."
+      ]
+    ],
+    "features": [
+      "Importação de CSV e XLSX",
+      "Indicadores de qualidade e KPIs",
+      "Anomalias com Isolation Forest",
+      "Segmentação com K-Means",
+      "Previsão com Random Forest",
+      "Assistente local e LLM opcional"
+    ],
+    "stack": [
+      "Python",
+      "FastAPI",
+      "Pandas",
+      "scikit-learn",
+      "openpyxl",
+      "Docker"
+    ],
+    "architecture": "Backend FastAPI modular, com ingestão, perfil semântico, qualidade, modelos e insights separados. A interface HTML/CSS/JavaScript é servida pelo próprio backend. As análises ficam em memória nesta edição.",
+    "limits": "Projeto demonstrativo com dataset sintético. Previsões são estimativas; os sinais de associação não demonstram causalidade. Login, filas e persistência de análises são evoluções futuras.",
+    "evolution": "Adicionar conectores de dados, armazenamento persistente, autenticação, filas para arquivos maiores e monitoramento dos modelos.",
+    "diagram": [
+      "CSV / XLSX",
+      "Análise / ML",
+      "Insights"
+    ],
+    "evidence": [
+      "README.md",
+      "app/services/pipeline.py",
+      "app/main.py",
+      "pyproject.toml"
+    ]
+  },
+  {
+    "repo": "nossas-delicias-site",
+    "name": "Nossas Delícias",
+    "category": "Sistemas",
+    "status": "Em evolução",
+    "featured": true,
+    "page": "nossas-delicias.html",
+    "service": "sistemas",
+    "headline": "Da vitrine à gestão da confeitaria.",
+    "summary": "Catálogo, pedidos, montagem de bolos e operação interna em uma plataforma Django.",
+    "problem": "Vendas por canais diferentes tornam mais difícil conectar pedidos, produção, estoque, custos e recebimentos.",
+    "solution": "Uma plataforma que integra a experiência pública de compra a uma central privada de gestão, com modelos e regras para pedidos, fichas técnicas, estoque e financeiro.",
+    "flow": [
+      [
+        "Escolher",
+        "O cliente explora o catálogo e configura seu pedido ou bolo."
+      ],
+      [
+        "Organizar",
+        "A equipe acompanha pedidos, mensagens e logística na área privada."
+      ],
+      [
+        "Gerir",
+        "Insumos, vendas, custos e relatórios apoiam a rotina operacional."
+      ]
+    ],
+    "features": [
+      "Catálogo e carrinho de pedidos",
+      "Montagem de bolos por etapas",
+      "Contas e acompanhamento de pedidos",
+      "Mensagens ligadas a pedidos e eventos",
+      "Fichas técnicas e precificação",
+      "Gestão de estoque e financeiro"
+    ],
+    "stack": [
+      "Python",
+      "Django",
+      "PostgreSQL",
+      "Redis",
+      "Django Channels",
+      "openpyxl"
+    ],
+    "architecture": "Aplicação Django/ASGI com PostgreSQL, Redis e Channels. A vitrine pública e a central de gestão têm fluxos separados. Integrações de pagamento e armazenamento dependem da configuração do ambiente.",
+    "limits": "Código da plataforma em evolução, com configuração de deploy no Render. Operação em produção, pagamentos e disponibilidade pública não foram presumidos a partir da existência do repositório.",
+    "evolution": "Validar as integrações de pagamento em ambiente controlado, ampliar indicadores de produção e ajustar processos às regras de cada negócio.",
+    "diagram": [
+      "Pedido",
+      "Produção",
+      "Gestão"
+    ],
+    "evidence": [
+      "README.md",
+      "store/urls.py",
+      "store/views_management.py",
+      "requirements.txt"
+    ]
+  },
+  {
+    "repo": "curtailment-intelligence",
+    "name": "Curtailment Intelligence",
+    "category": "IA",
+    "status": "Demo sintética",
+    "featured": true,
+    "page": "curtailment-intelligence.html",
+    "service": "ia",
+    "headline": "Antecipar riscos. Comparar respostas.",
+    "summary": "Previsão e simulação de restrições na geração renovável, com premissas explícitas.",
+    "problem": "Analisar restrições de geração exige conectar dados, estimativas de risco e possíveis respostas operacionais.",
+    "solution": "Uma plataforma experimental de apoio à decisão que combina classificação, regressão, explicabilidade e otimização linear para simular cenários de curtailment.",
+    "flow": [
+      [
+        "Diagnosticar",
+        "A base é organizada por fonte, região e eventos."
+      ],
+      [
+        "Estimar",
+        "Modelos calculam probabilidade e magnitude do risco."
+      ],
+      [
+        "Simular",
+        "Um otimizador compara bateria e carga flexível sob limites definidos."
+      ]
+    ],
+    "features": [
+      "Dashboard de diagnóstico",
+      "Previsão de risco e energia restringida",
+      "Validação temporal dos modelos",
+      "Explicações por perturbação local",
+      "Otimização linear com restrições",
+      "Adaptador inicial para dados do ONS"
+    ],
+    "stack": [
+      "Python",
+      "FastAPI",
+      "SQLAlchemy",
+      "scikit-learn",
+      "SciPy",
+      "Docker"
+    ],
+    "architecture": "Camadas independentes de API, dados, ML e otimização. A demonstração usa SQLite ou PostgreSQL; o dashboard principal é HTML/CSS/JavaScript e há uma frente React/Vite em evolução.",
+    "limits": "Os resultados da demonstração usam dados sintéticos. Não são medições do ONS nem recomendações para operação real. A explicabilidade implementada não representa causalidade.",
+    "evolution": "Validar dados oficiais com especialistas, definir alvos e horizontes operacionais e recalibrar os modelos com séries reais.",
+    "diagram": [
+      "Dados",
+      "Previsão",
+      "Simulação"
+    ],
+    "evidence": [
+      "README.md",
+      "ml/modeling.py",
+      "app/services/optimizer.py",
+      "docs/PROJECT_STATUS.md"
+    ]
+  },
+  {
+    "repo": "projeto_academia",
+    "name": "Movimento",
+    "category": "Sistemas",
+    "status": "MVP em branch",
+    "featured": true,
+    "page": "movimento.html",
+    "service": "mvp",
+    "branch": "feat/mvp",
+    "headline": "A academia conectada ao treino do aluno.",
+    "summary": "Administração, professores e alunos em um MVP de gestão e acompanhamento de treinos.",
+    "problem": "Fichas dispersas e acompanhamento manual dificultam identificar treinos vencidos e alunos que precisam de atenção.",
+    "solution": "Um SaaS B2B com painel para a academia, carteira de alunos para professores e experiência mobile para registrar séries, cargas e repetições.",
+    "flow": [
+      [
+        "Organizar",
+        "A academia cadastra pessoas e associa alunos a professores."
+      ],
+      [
+        "Planejar",
+        "O professor atribui templates e acompanha o histórico."
+      ],
+      [
+        "Acompanhar",
+        "O aluno registra sessões; a gestão visualiza pendências calculadas."
+      ]
+    ],
+    "features": [
+      "Papéis de administração, professor e aluno",
+      "Separação dos dados por academia",
+      "Templates e planos individuais",
+      "Registro de séries, cargas e repetições",
+      "Histórico e avaliações básicas",
+      "Indicadores de atenção por datas reais"
+    ],
+    "stack": [
+      "TypeScript",
+      "Next.js",
+      "React",
+      "PostgreSQL",
+      "Prisma",
+      "NextAuth"
+    ],
+    "architecture": "Monólito modular Next.js com Server Actions, validação Zod e Prisma. A organização é derivada da sessão e validada na camada de consultas e permissões.",
+    "limits": "O MVP está na branch pública feat/mvp; a main contém somente um README. Não há demo pública verificada. Pagamentos, catraca, IA e aplicativos nativos não fazem parte desta implementação.",
+    "evolution": "Validar o uso com academias, evoluir planos individuais, notificações e integrações financeiras conforme demanda e escopo.",
+    "diagram": [
+      "Academia",
+      "Professor",
+      "Aluno"
+    ],
+    "evidence": [
+      "README.md",
+      "package.json",
+      "src/lib/permissions.ts",
+      "src/lib/attention.ts",
+      "prisma/schema.prisma"
+    ]
+  },
+  {
+    "repo": "finance-manager",
+    "name": "Finance Manager",
+    "category": "Sistemas",
+    "status": "Edição pública reduzida",
+    "featured": true,
+    "page": "gestao-financeira.html",
+    "service": "sistemas",
+    "headline": "Estrutura para o controle financeiro.",
+    "summary": "Modelagem de receitas, despesas, contas e permissões em uma base Django genérica.",
+    "problem": "Movimentações, responsabilidades e regras de aprovação precisam de uma base consistente para manter a rastreabilidade financeira.",
+    "solution": "Uma edição pública que preserva modelos de domínio e regras de segurança de um sistema financeiro, com uma interface demonstrativa reduzida.",
+    "flow": [
+      [
+        "Estruturar",
+        "Contas, departamentos, receitas e despesas recebem modelos próprios."
+      ],
+      [
+        "Validar",
+        "Regras de perfil, documentos e estados orientam o tratamento dos dados."
+      ],
+      [
+        "Consultar",
+        "Uma interface genérica demonstra o acesso à base financeira."
+      ]
+    ],
+    "features": [
+      "Modelos de receitas e despesas",
+      "Contas e movimentações",
+      "Orçamentos por departamento",
+      "Estados de aprovação no domínio",
+      "Papéis e regras de acesso",
+      "Validação de documentos enviados"
+    ],
+    "stack": [
+      "Python",
+      "Django",
+      "PostgreSQL",
+      "Bootstrap",
+      "openpyxl",
+      "ReportLab"
+    ],
+    "architecture": "Aplicação Django modular com banco relacional. A edição pública contém a camada de domínio, configurações de segurança e telas reduzidas; não equivale à aplicação privada que originou a estrutura.",
+    "limits": "Repositório genérico de portfólio, com interface reduzida. Telas operacionais, fluxos completos de aprovação e relatórios da implementação privada não estão todos disponíveis na edição pública.",
+    "evolution": "Construir os fluxos operacionais completos sobre a base genérica, com centros de custo, relatórios e integrações definidos para cada organização.",
+    "diagram": [
+      "Lançamento",
+      "Validação",
+      "Consulta"
+    ],
+    "evidence": [
+      "README.md",
+      "expenses/models.py",
+      "accounts/models.py",
+      "dashboard/views.py",
+      "requirements.txt"
+    ]
+  },
+  {
+    "repo": "bakery-manager",
+    "name": "Pricing & Sales Manager",
+    "category": "Automação",
+    "status": "Demo em Excel",
+    "featured": true,
+    "page": "precificacao-vendas.html",
+    "service": "automacao",
+    "headline": "Custos que conversam com as vendas.",
+    "summary": "Uma planilha integrada de insumos, receitas, precificação e análise comercial.",
+    "problem": "Quando custo, preço e vendas vivem em arquivos separados, torna-se difícil entender a margem de cada produto e canal.",
+    "solution": "Uma planilha demonstrativa com seis abas conectadas, fórmulas de custos e precificação, registro de vendas e dashboard. Um protótipo Python lê e valida sua estrutura.",
+    "flow": [
+      [
+        "Calcular",
+        "Insumos e rendimento definem o custo unitário."
+      ],
+      [
+        "Precificar",
+        "Margem e taxas do canal orientam a formação do preço."
+      ],
+      [
+        "Analisar",
+        "As vendas alimentam indicadores de receita, custo e lucro."
+      ]
+    ],
+    "features": [
+      "Cadastro de insumos e unidades",
+      "Receitas e custo por lote",
+      "Margem-alvo e taxas por canal",
+      "Preço sugerido e praticado",
+      "Vendas e dashboard integrado",
+      "Leitura e validação em Python"
+    ],
+    "stack": [
+      "Excel",
+      "Fórmulas",
+      "Python",
+      "Pandas",
+      "openpyxl"
+    ],
+    "architecture": "A planilha é o artefato mais maduro: Config, Ingredients, Recipes, Pricing, Sales e Dashboard. O código Python corresponde à primeira etapa de validação e leitura, não a um sistema web completo.",
+    "limits": "A demo utiliza produtos, canais e valores fictícios. Não expõe dados da operação que inspirou o projeto. Os números da planilha são exemplos, não resultados comerciais da MATRIZ.",
+    "evolution": "Automatizar importações de compras e vendas ou migrar o modelo para uma aplicação com usuários e banco central.",
+    "diagram": [
+      "Custo",
+      "Preço",
+      "Margem"
+    ],
+    "evidence": [
+      "README.md",
+      "main.py",
+      "demo/small-business-pricing-manager-demo.xlsx"
+    ]
+  },
+  {
+    "repo": "csv-sales-analyzer",
+    "name": "Sales Intelligence",
+    "category": "Dados",
+    "status": "Demo de análise",
+    "featured": true,
+    "page": "analise-vendas.html",
+    "service": "dados",
+    "headline": "Um arquivo de vendas. Uma visão utilizável.",
+    "summary": "CSV, indicadores, filtros e relatórios em um dashboard de análise de vendas.",
+    "problem": "Arquivos de vendas brutos exigem limpeza e cálculos repetidos antes de ajudar a responder perguntas do negócio.",
+    "solution": "Um pipeline Python com dashboard Streamlit para validar dados, explorar indicadores, comparar produtos e períodos e exportar relatórios.",
+    "flow": [
+      [
+        "Preparar",
+        "O CSV passa por validação e limpeza de datas, preços e quantidades."
+      ],
+      [
+        "Explorar",
+        "Filtros permitem analisar produtos, categorias e períodos."
+      ],
+      [
+        "Entregar",
+        "Os resultados filtrados viram relatórios em CSV e Excel."
+      ]
+    ],
+    "features": [
+      "Upload e validação de CSV",
+      "KPIs de vendas e ticket médio",
+      "Filtros de produto, categoria e período",
+      "Séries temporais e rankings",
+      "Anomalias por intervalo interquartil",
+      "Exportação de relatórios Excel e CSV"
+    ],
+    "stack": [
+      "Python",
+      "Pandas",
+      "Streamlit",
+      "Matplotlib",
+      "openpyxl"
+    ],
+    "architecture": "Módulos separados para preparação da base, métricas, visualização e relatórios. A solução pode ser executada pela interface Streamlit ou pelo terminal.",
+    "limits": "Projeto de portfólio com arquivo de demonstração. Não há implantação pública validada nem conexão automática a sistemas de vendas nesta versão.",
+    "evolution": "Adicionar conectores de fontes, processamento agendado, comparação entre unidades e regras de qualidade específicas da operação.",
+    "diagram": [
+      "CSV",
+      "Indicadores",
+      "Relatório"
+    ],
+    "evidence": [
+      "README.md",
+      "dashboard.py",
+      "src/analyzer.py",
+      "requirements.txt"
+    ]
+  },
+  {
+    "repo": "coffee_five_site",
+    "name": "Coffee Five",
+    "category": "Web",
+    "status": "Proposta de site",
+    "featured": true,
+    "page": "coffee-five.html",
+    "service": "web",
+    "headline": "Do primeiro contato à escolha no cardápio.",
+    "summary": "Proposta de experiência institucional para cafeteria, com cardápio pesquisável.",
+    "problem": "Um catálogo extenso precisa manter navegação clara e acesso fácil às informações de cada produto, especialmente no celular.",
+    "solution": "Um site estático com página institucional e rota própria de cardápio, incluindo categorias, filtros e busca.",
+    "flow": [
+      [
+        "Conhecer",
+        "A página institucional apresenta a cafeteria e suas frentes."
+      ],
+      [
+        "Encontrar",
+        "O visitante pesquisa ou filtra os itens do cardápio."
+      ],
+      [
+        "Escolher",
+        "Informações de produtos e links orientam a próxima ação."
+      ]
+    ],
+    "features": [
+      "Página institucional",
+      "Cardápio em rota própria",
+      "Busca e filtros de produtos",
+      "Layout para desktop e celular",
+      "Imagens e identidade da proposta",
+      "Publicação estática"
+    ],
+    "stack": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "GitHub Pages"
+    ],
+    "architecture": "Duas rotas estáticas com JavaScript local e conteúdo renderizado em HTML. Não há banco, checkout ou autenticação nesta proposta.",
+    "limits": "Proposta de redesign baseada em informações públicas da Coffee Five. A presença no portfólio não afirma contratação, parceria ou aprovação comercial da marca.",
+    "evolution": "Conectar catálogo administrável, atualizar conteúdo com a operação e integrar pedidos se houver necessidade validada.",
+    "diagram": [
+      "Institucional",
+      "Cardápio",
+      "Busca"
+    ],
+    "evidence": [
+      "README.md",
+      "index.html",
+      "cardapio/index.html",
+      "assets/app.js"
+    ],
+    "image": "assets/previews/coffee-five.webp",
+    "image_width": 1348,
+    "image_height": 926,
+    "image_alt": "Captura do cardápio Coffee Five com navegação, fotografia, busca e filtros por categoria.",
+    "image_note": "Proposta de redesign, sem afirmação de contratação ou aprovação comercial. Capturada em 08/09/2026; conteúdo e preços pertencem à demonstração."
+  },
+  {
+    "repo": "projeto-petshop",
+    "name": "Pata & Companhia",
+    "category": "Web",
+    "status": "MVP de interface",
+    "featured": true,
+    "page": "pata-companhia.html",
+    "service": "mvp",
+    "headline": "Uma jornada digital para cuidar dos pets.",
+    "summary": "Loja, carrinho e agendamento demonstrativos em uma experiência responsiva.",
+    "problem": "Produtos e serviços precisam ser encontrados de forma simples para que o tutor consiga montar sua escolha e entender o agendamento.",
+    "solution": "Um MVP React com marca fictícia, loja filtrável, carrinho lateral, serviços e agendamento em cinco etapas.",
+    "flow": [
+      [
+        "Explorar",
+        "O tutor pesquisa produtos ou conhece os serviços."
+      ],
+      [
+        "Selecionar",
+        "Itens entram no carrinho ou no fluxo de agendamento."
+      ],
+      [
+        "Conferir",
+        "A interface apresenta o resumo e uma confirmação demonstrativa."
+      ]
+    ],
+    "features": [
+      "Busca e filtros de produtos",
+      "Carrinho e alteração de quantidades",
+      "Modais de serviços",
+      "Agendamento em cinco etapas",
+      "Área demonstrativa Meu Pet",
+      "Feedbacks e menu mobile"
+    ],
+    "stack": [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Tailwind CSS"
+    ],
+    "architecture": "Aplicação de interface com estados locais em React. A jornada demonstra interação e responsividade, sem backend de pedidos ou agenda real.",
+    "limits": "Marca fictícia e dados demonstrativos. A confirmação visual não realiza pedido, pagamento, contato ou reserva em estabelecimento real.",
+    "evolution": "Adicionar autenticação, catálogo persistente, regras de disponibilidade e integrações para concluir pedidos e agendamentos reais.",
+    "diagram": [
+      "Produtos",
+      "Serviços",
+      "Agendamento"
+    ],
+    "evidence": [
+      "README.md",
+      "package.json",
+      "src/App.tsx"
+    ]
+  },
+  {
+    "repo": "institutional-site-template",
+    "name": "Nexa Institucional",
+    "category": "Web",
+    "status": "Template demonstrativo",
+    "featured": false,
+    "page": "site-institucional-painel.html",
+    "service": "web",
+    "headline": "Conteúdo institucional com base para evolução.",
+    "summary": "Páginas públicas e camada de dados para um site institucional; painel demonstrativo.",
+    "problem": "Organizações precisam de páginas consistentes e de uma estrutura que permita evoluir sua gestão de conteúdo.",
+    "solution": "Um template com páginas institucionais, acesso a dados D1 e endpoint de contato. A área administrativa pública é uma demonstração de estrutura.",
+    "flow": [
+      [
+        "Apresentar",
+        "As páginas organizam a informação institucional."
+      ],
+      [
+        "Consultar",
+        "A camada de conteúdo busca registros em D1 quando configurado."
+      ],
+      [
+        "Evoluir",
+        "A área interna serve como referência para implementação de gestão."
+      ]
+    ],
+    "features": [
+      "Páginas de equipe, agenda e conteúdo",
+      "Camada de consulta a Cloudflare D1",
+      "Endpoint de contato",
+      "Criptografia do conteúdo de contato",
+      "Estrutura de auditoria no schema",
+      "Painel visual demonstrativo"
+    ],
+    "stack": [
+      "TypeScript",
+      "Next.js",
+      "React",
+      "Cloudflare D1"
+    ],
+    "architecture": "O manifesto declara Next.js e React. Existe uma camada de consulta SQL para D1, dependente da ligação do banco ao runtime. A rota de acesso interno exibe ferramentas desabilitadas.",
+    "limits": "Embora o README descreva gestão protegida, o código público do painel é demonstrativo e não implementa o fluxo completo de administração. Não é apresentado como sistema administrativo pronto.",
+    "evolution": "Implementar identidade, permissões e edição de conteúdo; configurar persistência e testar o fluxo completo de administração.",
+    "diagram": [
+      "Conteúdo",
+      "Páginas",
+      "Gestão futura"
+    ],
+    "evidence": [
+      "README.md",
+      "package.json",
+      "app/acesso-interno/page.tsx",
+      "db/runtime.ts",
+      "lib/site-content.ts"
+    ]
+  },
+  {
+    "repo": "riftpilot",
+    "name": "RiftPilot",
+    "category": "Backend",
+    "status": "Experimental",
+    "featured": false,
+    "page": "riftpilot.html",
+    "service": "api",
+    "headline": "A base de um assistente analítico local.",
+    "summary": "Serviço FastAPI e integração inicial de dados de partida; recomendações ainda em desenvolvimento.",
+    "problem": "Um assistente contextual precisa primeiro obter e organizar informações observáveis de forma confiável.",
+    "solution": "A fundação de um serviço local de analytics, com health check, consulta ao cliente de jogo e testes de API.",
+    "flow": [
+      [
+        "Conectar",
+        "Um cliente local consulta os dados disponíveis."
+      ],
+      [
+        "Normalizar",
+        "Modelos tipados organizam as respostas."
+      ],
+      [
+        "Expor",
+        "Uma API local disponibiliza o estado para futuras análises."
+      ]
+    ],
+    "features": [
+      "Serviço local FastAPI",
+      "Modelos Pydantic",
+      "Health check",
+      "Consulta de estado da partida",
+      "Testes de rotas e cliente",
+      "Decisões de arquitetura documentadas"
+    ],
+    "stack": [
+      "Python",
+      "FastAPI",
+      "Pydantic",
+      "Pytest",
+      "Ruff"
+    ],
+    "architecture": "Monorepo com serviço Python de analytics. As rotas atuais expõem saúde e estado da partida; o motor de recomendações e o aplicativo desktop estão planejados.",
+    "limits": "Projeto experimental de estudo. Não há recomendação em tempo real ou cliente desktop concluído. League of Legends pertence à Riot Games; o projeto não tem afiliação oficial.",
+    "evolution": "Evoluir normalização, métricas e regras explicáveis antes de avaliar modelos estatísticos e interface desktop.",
+    "diagram": [
+      "Dados locais",
+      "API",
+      "Análise futura"
+    ],
+    "evidence": [
+      "README.md",
+      "services/analytics/src/riftpilot_analytics/api/routes/live_game.py",
+      "services/analytics/pyproject.toml"
+    ]
+  },
+  {
+    "repo": "url-shortener-api",
+    "name": "URL Shortener API",
+    "category": "Backend",
+    "status": "Projeto de estudo",
+    "summary": "API de URLs curtas com redirecionamento, contagem de acessos e persistência SQLite.",
+    "stack": [
+      "Python",
+      "FastAPI",
+      "SQLite"
+    ],
+    "evidence": [
+      "README.md",
+      "api.py",
+      "database.py"
+    ]
+  },
+  {
+    "repo": "hotmart_sites",
+    "name": "NexoPlan",
+    "category": "Web",
+    "status": "Site de produtos",
+    "summary": "Vitrine de produtos digitais com páginas próprias, comparação e links de checkout.",
+    "stack": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "evidence": [
+      "README.md",
+      "index.html",
+      "analytics.js"
+    ]
+  },
+  {
+    "repo": "projeto_excel_DIO",
+    "name": "Simulador de investimentos · DIO",
+    "category": "Estudos",
+    "status": "Estudo em Excel",
+    "summary": "Exercício de simulação com parâmetros e fórmulas. Não constitui recomendação de investimento.",
+    "stack": [
+      "Excel"
+    ],
+    "evidence": [
+      "README.md",
+      "Desafio_DIO_Simulador_Investimentos_FIIs.xlsx"
+    ]
+  },
+  {
+    "repo": "Traducao_R_para_Python_UFF",
+    "name": "Estatística de R para Python",
+    "category": "Estudos",
+    "status": "Estudo acadêmico",
+    "summary": "Tradução de exercícios e rotinas estatísticas para Python.",
+    "stack": [
+      "Python"
+    ],
+    "evidence": [
+      "Codigos_traduzidos.py"
+    ]
+  },
+  {
+    "repo": "pequenos_projetos",
+    "name": "Laboratório Python",
+    "category": "Estudos",
+    "status": "Exercícios",
+    "summary": "Prática de lógica, arquivos, automações simples e consumo de APIs.",
+    "stack": [
+      "Python"
+    ],
+    "evidence": [
+      "README.md",
+      "intermediario/sistema_com_arquivos.py"
+    ]
+  },
+  {
+    "repo": "Conta_Bancaria",
+    "name": "Simulação de conta bancária",
+    "category": "Estudos",
+    "status": "Exercício de lógica",
+    "summary": "Operações bancárias simuladas em um programa de terminal.",
+    "stack": [
+      "Python"
+    ],
+    "evidence": [
+      "README.md",
+      "Sistema_Bancario_V3.py"
+    ]
+  },
+  {
+    "repo": "lab-natty-or-not",
+    "name": "Laboratório de IA generativa",
+    "category": "Estudos",
+    "status": "Estudo DIO",
+    "summary": "Experimento de geração de conteúdo visual e reflexão sobre limites da ferramenta.",
+    "stack": [
+      "IA generativa"
+    ],
+    "evidence": [
+      "README.md"
+    ]
+  },
+  {
+    "repo": "Sicma-JAVA",
+    "name": "Sicma · Java",
+    "category": "Estudos",
+    "status": "Estrutura inicial",
+    "summary": "Estrutura inicial Spring Boot; não há sistema de negócio completo demonstrado.",
+    "stack": [
+      "Java",
+      "Spring Boot"
+    ],
+    "evidence": [
+      "demo/demo/build.gradle",
+      "demo/demo/src/main/java/com/example/demo/DemoApplication.java"
+    ]
+  },
+  {
+    "repo": "Pluvia",
+    "name": "Pluvia",
+    "category": "Estudos",
+    "status": "Estrutura inicial",
+    "summary": "Projeto inicial Godot. Sem experiência funcional suficiente para um case.",
+    "stack": [
+      "Godot"
+    ],
+    "evidence": [
+      "project.godot"
+    ]
+  },
+  {
+    "repo": "projeto-barbearia",
+    "name": "Projeto barbearia",
+    "category": "Estudos",
+    "status": "Repositório vazio",
+    "summary": "Repositório reservado, sem código ou branches na inspeção. Não apresentado como produto.",
+    "stack": [],
+    "evidence": []
+  },
+  {
+    "repo": "project-nomad",
+    "name": "Project N.O.M.A.D.",
+    "category": "Estudos",
+    "status": "Fork de terceiros",
+    "fork": true,
+    "summary": "Fork de Crosstalk-Solutions/project-nomad. Referência de estudo em ferramentas offline; autoria original de terceiros.",
+    "stack": [],
+    "evidence": []
+  },
+  {
+    "repo": "LibreSprite",
+    "name": "LibreSprite",
+    "category": "Estudos",
+    "status": "Fork de terceiros",
+    "fork": true,
+    "summary": "Fork de LibreSprite/LibreSprite. Editor de pixel art de terceiros; não é um produto desenvolvido pela MATRIZ.",
+    "stack": [],
+    "evidence": []
+  },
+  {
+    "repo": "dataforge-portfolio",
+    "name": "MATRIZ · site institucional",
+    "category": "Web",
+    "status": "Este projeto",
+    "summary": "Identidade institucional, portfólio e contato em uma arquitetura estática.",
+    "stack": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "evidence": [
+      "README.md",
+      "index.html"
+    ]
+  }
+]

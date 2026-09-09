@@ -1,0 +1,10 @@
+{
+  "source": "Logo Matriz.svg",
+  "original_sha256": "c36bd7319d2feeff6983659f41ea0d418224ef71e95cd6ef04a950560c789e8d",
+  "path_count": 114,
+  "geometry_and_paint_sha256": "7f18a33510e63923dd87244f855ba73f5776e9cd7d13a2995909a9a0082a14bf",
+  "changes": [
+    "Removed XML declaration and external DTD",
+    "Added viewBox 0 0 1254 1254; no geometry, color or proportion changes"
+  ]
+}

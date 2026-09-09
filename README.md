@@ -1,76 +1,122 @@
-# Gabriel Santana — Portfolio
+# MATRIZ
 
-Portfólio profissional com foco em **sistemas, dados, automação e Inteligência Artificial aplicada**.
+**Tecnologia que transforma negócios em possibilidades.**
 
-Site público: **https://gabrielsantanabr.github.io/gabriel-santana-portfolio/**
+Sistemas · Automação · Dados · Inteligência.
 
-## Posicionamento
+Site institucional da MATRIZ, com soluções, projetos, repertório público e contato. A tecnologia parte do problema da operação: conectar processos, organizar dados e construir produtos utilizáveis.
 
-> Transformo processos manuais em soluções digitais.
+**Site:** https://gabrielsantanabr.github.io/dataforge-portfolio/
 
-A vitrine prioriza **o problema resolvido e o resultado entregue**. Os nomes técnicos continuam visíveis como marca/projeto, mas a comunicação principal explica o que cada solução faz.
+`dataforge-portfolio` é o nome legado do repositório. A marca pública é **MATRIZ**; o nome do repositório e o endereço do GitHub Pages foram preservados.
 
-## Projetos selecionados
+## Soluções
 
-- **Agenda e CRM para Serviços — ClientFlow**: agenda, clientes, serviços, orçamentos e atendimento em um fluxo único.
-- **Análise Inteligente de Dados — DecisionForge AI**: qualidade de dados, anomalias, segmentação, drivers, forecasting e insights explicáveis.
-- **IA para Risco Energético — Curtailment Intelligence**: previsão, explicabilidade e otimização para curtailment em geração renovável.
-- **Sistema de Gestão Financeira — Finance Manager**: receitas, despesas, aprovações, permissões, auditoria e relatórios.
-- **Precificação e Análise de Vendas — Pricing & Sales Manager**: custos, rendimento, margem, preço e indicadores comerciais conectados.
-- **Site Institucional com Painel — Institutional Site Template**: presença digital responsiva com conteúdo administrável.
-- **Análise Automatizada de Vendas — CSV Sales Analyzer**: pipeline de limpeza, métricas, rankings, exportações e gráficos.
-- **Assistente Analítico para League of Legends — RiftPilot**: projeto experimental de recomendações contextuais e explicáveis.
+- **Sistemas:** gestão, CRMs, financeiros, portais, SaaS e workflows.
+- **Automação:** integrações, processamento, ETL, planilhas e rotinas.
+- **Dados:** dashboards, BI, indicadores, modelagem, qualidade e análise.
+- **Inteligência:** previsão, classificação, segmentação, anomalias e IA aplicada.
 
-## Páginas próprias
+Sites e produtos web, APIs, MVPs e evolução de infraestrutura complementam essas frentes. O trabalho é contratado sob escopo: diagnóstico, desenvolvimento, validação e evolução. Não há preços automáticos para sistemas complexos.
 
-Cada projeto possui uma URL independente, metadados próprios e uma experiência interativa com quatro visões:
+## Projetos e evidências
 
-1. **Visão geral** — problema e solução.
-2. **Como funciona** — fluxo simplificado em três etapas.
-3. **Tecnologia** — arquitetura e stack.
-4. **Evolução** — próximos passos e possibilidades comerciais/técnicas.
+A inspeção de 08/09/2026 identificou 26 repositórios públicos. O repositório de perfil foi excluído; os outros 25 compõem o repertório. Dois forks e um repositório vazio estão explicitamente identificados. Dez projetos receberam destaque, sem inventar clientes, métricas ou uso em produção.
 
-As páginas também incluem preview visual do produto, CTA para contato, repositório e navegação para o próximo projeto.
+| Projeto | Página | Estágio verificado |
+| --- | --- | --- |
+| ClientFlow | `clientflow.html` | Protótipo frontend; erro de inicialização registrado |
+| DecisionForge AI | `decisionforge-ai.html` | Demo de análise de dados e ML |
+| Nossas Delícias | `nossas-delicias.html` | Plataforma Django em evolução |
+| Curtailment Intelligence | `curtailment-intelligence.html` | Demo com dados sintéticos |
+| Movimento | `movimento.html` | MVP na branch `feat/mvp` |
+| Finance Manager | `gestao-financeira.html` | Edição pública reduzida |
+| Pricing & Sales Manager | `precificacao-vendas.html` | Demo em Excel |
+| Sales Intelligence | `analise-vendas.html` | Dashboard e CLI de análise |
+| Coffee Five | `coffee-five.html` | Proposta de site e cardápio |
+| Pata & Companhia | `pata-companhia.html` | MVP de interface |
 
-## Estrutura visual
+Nexa Institucional (`site-institucional-painel.html`) e RiftPilot (`riftpilot.html`) mantêm suas URLs com conteúdo corrigido. `project.html?id=...` mantém os oito redirecionamentos antigos por lista permitida. Os principais anchors antigos da home também continuam disponíveis.
 
-- `styles.css`: componentes e previews técnicos já existentes.
-- `video-effects.css`: microinterações e acabamento visual.
-- `portfolio-proof.css`: seção de base profissional da home.
-- `identity.css`: **camada final de identidade clean**, responsável por cores, hierarquia, espaçamento, cards, preços, formulário e páginas de produto.
-- `effects.js`: animações com APIs nativas do navegador.
-- `product.js`: conteúdo e interações das páginas próprias.
-- `script.js`: utilidades leves, filtros da home e compatibilidade com URLs antigas.
+Os textos e as fontes ficam em `content/projects.json`. `docs/repository-audit.json` registra branches, revisões e arquivos consultados. A inspeção de código não equivale a certificação, contratação ou comprovação de produção. A captura do Coffee Five veio da interface real do repositório, sem alteração do layout; a marca não é apresentada como cliente.
 
-A identidade atual usa verde escuro, superfícies discretas, contraste controlado e menos efeitos competindo com o conteúdo. O motion respeita `prefers-reduced-motion` e não depende de bibliotecas JavaScript externas.
+## Identidade
 
-## Segurança
+A logo oficial veio do arquivo **Logo Matriz.svg**. Os 114 paths, suas cores e proporções foram preservados. Apenas a declaração XML e o DTD externo foram retirados, e um `viewBox` quadrado foi acrescentado. O nome MATRIZ é texto separado. O teste compara a geometria e a pintura com o hash registrado em `docs/brand-provenance.json`.
 
-O portfólio é estático e mantém CSP restritiva, scripts locais, links externos protegidos, validação do formulário, honeypot, timeout e checagens automáticas antes do deploy. O Web3Forms é a única conexão externa permitida na página de contato.
+| Cor | Valor | Uso |
+| --- | --- | --- |
+| Carbon Black | `#0A0B0D` | Fundo principal |
+| Graphite | `#15171A` | Superfícies |
+| Forge White | `#F2F1ED` | Texto e seção de evidências |
+| Steel | `#8C949D` | Informação secundária |
+| Ember | `#FF402E` | Energia da marca |
+| Hot Ember | `#FF8A45` | CTAs e destaques |
 
-Detalhes: [`SECURITY.md`](SECURITY.md).
+Space Grotesk, Inter e IBM Plex Mono são servidas localmente em WOFF2, com `font-display: swap`. As licenças OFL estão em `assets/fonts/`. Favicon SVG e PNG, ícone Apple e imagem social 1200×630 usam a logo oficial.
 
-## Publicação e validação
+## Stack e estrutura
 
-O GitHub Actions bloqueia o deploy se houver:
+HTML semântico, CSS responsivo e JavaScript nativo. Nenhuma dependência de execução ou biblioteca de animação. Python gera os arquivos estáticos e reúne o contato em um único script local; Node fornece o servidor local e os testes de contato.
 
-- JavaScript inválido;
-- arquivo ou link local quebrado;
-- IDs HTML duplicados;
-- CSP inconsistente;
-- script/estilo inline não permitido;
-- página de produto ausente;
-- retorno de links antigos `project.html?id=...` na home;
-- sitemap desatualizado;
-- fluxo de contato incompleto;
-- padrões comuns de segredos privilegiados.
+| Caminho | Finalidade |
+| --- | --- |
+| `index.html` | Home institucional e repertório com filtros |
+| `prices.html` / `contact.html` | Serviços sob escopo e contato |
+| `privacy.html` / `security.html` | Práticas de privacidade e segurança |
+| `repertoire.html` | Critérios e fontes da seleção |
+| `scripts/render.py` | Fonte dos templates e metadados |
+| `content/projects.json` | Fonte editorial dos projetos |
+| `assets/brand/` | Logo, favicons e social preview |
+| `assets/css/` / `assets/js/` / `assets/fonts/` | Recursos locais |
+| `tests/audit.py` | Integridade, marca, SEO, segurança e assets |
+| `tests/contact.test.mjs` | Validação, payload, respostas e timeout |
+| `tests/browser/` | Ferramentas locais de teste de viewport e formulário |
+| `dist/` | Saída publicável, gerada e ignorada pelo Git |
 
-## SEO e compartilhamento
+## Execução local
 
-O repositório inclui `robots.txt`, `sitemap.xml`, canonical URLs, Open Graph, imagem social 1200×630, página 404 e compatibilidade para os antigos links `project.html?id=...`.
+Requisitos: **Node 22+ e Python 3.12+**. Não é necessário instalar pacotes.
 
-## Contato
+```bash
+npm run render
+npm run dev
+```
 
-- [Portfólio](https://gabrielsantanabr.github.io/gabriel-santana-portfolio/)
-- [GitHub](https://github.com/GabrielSantanaBR)
-- [LinkedIn](https://www.linkedin.com/in/gabriel-santana-b3654622a/)
+Abra `http://localhost:4173/`. Ao alterar os templates ou os dados, execute `npm run render`. Os HTML gerados permanecem versionados para facilitar inspeção e preservar os caminhos anteriores.
+
+## Testes
+
+```bash
+npm test
+npm run build
+python3 tests/audit.py --dist
+```
+
+As verificações anteriores foram adaptadas à MATRIZ: arquivos obrigatórios, sintaxe JS, referências e anchors, IDs, semântica, CSP, atributos seguros, repertório completo, serviços, formulário, SEO e padrões de credenciais. Novos testes protegem a logo, favicons, fontes e saída pública.
+
+O contato é testado com transporte simulado: validação, campos opcionais, payload permitido, sucesso explícito, resposta inválida, erro, limite de tentativas e timeout. Isso não atesta recebimento de email na caixa de destino.
+
+Para QA de layout, abra `/__qa/` no servidor local. O painel cria viewports de 360, 375, 390, 430, 768, 1366, 1440 e 1920 pixels em um iframe. Os cenários locais de contato usam identificador de teste e bloqueiam conexões e submissões externas por CSP. Esse painel e os mocks são excluídos da publicação. A medição é de viewport CSS no Chromium; não substitui testes em aparelhos físicos ou em outros motores.
+
+A rodada de validação e seus limites estão em [`docs/validation.md`](docs/validation.md).
+
+## Contato, segurança e privacidade
+
+O serviço Web3Forms existente foi mantido. Seu identificador público direciona formulários e não concede acesso administrativo. Não há credenciais privilegiadas no frontend. Nome, email, tipo de projeto e descrição são obrigatórios; empresa, WhatsApp e orçamento são opcionais.
+
+O cliente aplica limites, validação, honeypot, bloqueio de envio simultâneo, intervalo de 15 segundos e timeout de 12 segundos. Falhas preservam os campos. A página de sucesso é aberta somente após resposta explícita de sucesso do serviço. Sem JavaScript, o formulário usa o POST nativo para o mesmo serviço.
+
+Não há analytics, pixels de marketing ou fontes remotas. O armazenamento de sessão mantém apenas o horário da tentativa, sem persistir a mensagem. Consulte `SECURITY.md` e as páginas de privacidade e segurança para controles e limites da plataforma.
+
+## Publicação e recuperação
+
+O workflow `.github/workflows/pages.yml` valida antes de publicar a `main`. Somente o conteúdo de `dist/` entra no artifact do GitHub Pages; testes, mocks, documentação, fontes de geração e configuração ficam de fora. `dist/dataforge-portfolio/` contém os caminhos de compatibilidade usados pela página 404 em hospedagens por subdiretório.
+
+A referência **`backup/pre-matriz-2026-09-07`** preserva o estado anterior, no commit `1f74f08ce8d7b300ab5ffff7b72e354afc70ff83`. Uma recuperação deve partir dessa referência e ser revisada antes de uma nova publicação; não exige renomear o repositório.
+
+Canonical, Open Graph e sitemap usam o endereço real do GitHub Pages. `.openai/hosting.json` identifica também a visualização privada complementar do mesmo projeto; não altera o endereço público canônico.
+
+## Licenças e atribuições
+
+As fontes possuem licenças OFL incluídas. A logo oficial e os materiais de marca foram fornecidos pelo responsável pelo projeto. Capturas e referências mantêm o contexto e os créditos dos projetos. Este repositório não atribui uma nova licença geral nem direitos sobre marcas de terceiros.

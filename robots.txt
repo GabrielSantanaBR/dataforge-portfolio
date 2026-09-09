@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
-
+Disallow: /dataforge-portfolio/thanks.html
+Disallow: /dataforge-portfolio/project.html
 Sitemap: https://gabrielsantanabr.github.io/dataforge-portfolio/sitemap.xml

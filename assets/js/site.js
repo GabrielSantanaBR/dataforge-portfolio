@@ -1,0 +1,117 @@
+(() => {
+  'use strict';
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  const menuButton = document.querySelector('.menu-toggle');
+  const nav = document.getElementById('main-nav');
+  const mobile = matchMedia('(max-width: 960px)');
+  const setMenu = (open, returnFocus = false) => {
+    nav?.classList.toggle('is-open', open);
+    document.body.classList.toggle('menu-open', open);
+    menuButton?.setAttribute('aria-expanded', String(open));
+    menuButton?.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+    if (returnFocus) menuButton?.focus();
+  };
+  menuButton?.addEventListener('click', () => setMenu(menuButton.getAttribute('aria-expanded') !== 'true'));
+  nav?.addEventListener('click', (event) => {
+    if (event.target.closest('a')) setMenu(false);
+  });
+  document.addEventListener('keydown', (event) => {
+    if (menuButton?.getAttribute('aria-expanded') !== 'true') return;
+    if (event.key === 'Escape') { event.preventDefault(); setMenu(false, true); }
+    if (event.key === 'Tab') {
+      const items = [menuButton, ...nav.querySelectorAll('a')];
+      const first = items[0], last = items.at(-1);
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+    }
+  });
+  mobile.addEventListener('change', () => setMenu(false));
+  document.querySelectorAll('[data-year]').forEach(el => { el.textContent = String(new Date().getFullYear()); });
+
+  const buttons = [...document.querySelectorAll('[data-filter]')];
+  const repositories = [...document.querySelectorAll('.repo-row')];
+  buttons.forEach(button => button.addEventListener('click', () => {
+    const filter = button.dataset.filter;
+    buttons.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+    let count = 0;
+    repositories.forEach(row => {
+      row.hidden = filter !== 'Todos' && row.dataset.category !== filter;
+      if (!row.hidden) count += 1;
+    });
+    const status = document.getElementById('repo-count');
+    if (status) status.textContent = `${count} ${count === 1 ? 'repositório' : 'repositórios'}${filter === 'Todos' ? '' : ` · ${filter}`}`;
+  }));
+
+  const counters = [...document.querySelectorAll('[data-count]')];
+  const runningCounters = new Map();
+  let counterObserver;
+  const finishCounters = () => {
+    counterObserver?.disconnect();
+    runningCounters.forEach(id => cancelAnimationFrame(id));
+    runningCounters.clear();
+    counters.forEach(el => { el.textContent = el.dataset.count; });
+  };
+  if ('IntersectionObserver' in window && !reduced.matches) {
+    counterObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target, target = Number(el.dataset.count), started = performance.now();
+        counterObserver.unobserve(el);
+        // Keep the accessible value stable while the visible number advances.
+        el.setAttribute('aria-label', String(target));
+        const tick = now => {
+          const progress = Math.min(1, (now - started) / 700);
+          el.textContent = String(Math.round(target * (1 - (1 - progress) ** 3)));
+          if (progress < 1 && !reduced.matches) runningCounters.set(el, requestAnimationFrame(tick));
+          else { el.textContent = String(target); runningCounters.delete(el); }
+        };
+        runningCounters.set(el, requestAnimationFrame(tick));
+      });
+    }, {threshold: 0.5});
+    counters.forEach(el => counterObserver.observe(el));
+  }
+
+  let observer;
+  if ('IntersectionObserver' in window && !reduced.matches) {
+    observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.remove('is-pending');
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.06 });
+    document.querySelectorAll('.reveal').forEach(el => { el.classList.add('is-pending'); observer.observe(el); });
+  }
+  const progress = document.querySelector('.scroll-progress');
+  const animation = progress?.animate?.([{transform:'scaleX(0)'},{transform:'scaleX(1)'}], {duration:1000,fill:'both'});
+  animation?.pause();
+  let scheduled = false;
+  const updateProgress = () => {
+    if (animation && !reduced.matches) {
+      const max = document.documentElement.scrollHeight - innerHeight;
+      animation.currentTime = max > 0 ? Math.min(1000, Math.max(0, scrollY / max * 1000)) : 0;
+    }
+    scheduled = false;
+  };
+  addEventListener('scroll', () => { if (!scheduled && !reduced.matches) { scheduled = true; requestAnimationFrame(updateProgress); } }, {passive:true});
+  addEventListener('resize', updateProgress, {passive:true});
+  reduced.addEventListener('change', () => {
+    if (reduced.matches) {
+      finishCounters();
+      observer?.disconnect();
+      document.querySelectorAll('.is-pending').forEach(el => el.classList.remove('is-pending'));
+    }
+    updateProgress();
+  });
+  updateProgress();
+
+  if (document.querySelector('[data-legacy-project]')) {
+    const routes = Object.freeze({clientflow:'clientflow.html',decisionforge:'decisionforge-ai.html',curtailment:'curtailment-intelligence.html',finance:'gestao-financeira.html',pricing:'precificacao-vendas.html',institutional:'site-institucional-painel.html',csv:'analise-vendas.html',riftpilot:'riftpilot.html'});
+    const id = new URLSearchParams(location.search).get('id');
+    if (Object.hasOwn(routes, id)) {
+      document.getElementById('legacy-project-link').href = routes[id];
+      location.replace(routes[id]);
+    }
+  }
+})();

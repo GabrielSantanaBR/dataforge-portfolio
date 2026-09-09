@@ -1,0 +1,16 @@
+{
+  "name": "matriz-institucional",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Site institucional e portf\u00f3lio da MATRIZ. Nome legado do reposit\u00f3rio: dataforge-portfolio.",
+  "scripts": {
+    "dev": "node server.mjs",
+    "build": "python3 scripts/build.py",
+    "test": "python3 tests/audit.py && node --test tests/*.test.mjs",
+    "render": "python3 scripts/render.py"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

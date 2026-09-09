@@ -1,0 +1,417 @@
+{
+  "dates": [
+    "2026-09-08",
+    "2026-09-09"
+  ],
+  "method": "Chromium, exact CSS viewports in same-origin iframe; recorded from the QA panel. Width difference of 15px is the vertical scrollbar. Lazy images outside the viewport are deferred, not counted as broken.",
+  "checks": [
+    {
+      "page": "index.html",
+      "viewport": [
+        360,
+        800
+      ],
+      "client_width": 345,
+      "scroll_width": 345,
+      "overflow": false,
+      "broken_loaded_images": [],
+      "fonts": "loaded"
+    },
+    {
+      "page": "index.html",
+      "viewport": [
+        375,
+        812
+      ],
+      "client_width": 360,
+      "scroll_width": 360,
+      "overflow": false,
+      "broken_loaded_images": [],
+      "fonts": "loaded"
+    },
+    {
+      "page": "index.html",
+      "viewport": [
+        390,
+        844
+      ],
+      "client_width": 375,
+      "scroll_width": 375,
+      "overflow": false,
+      "broken_loaded_images": [],
+      "fonts": "loaded"
+    },
+    {
+      "page": "index.html",
+      "viewport": [
+        430,
+        932
+      ],
+      "client_width": 415,
+      "scroll_width": 415,
+      "overflow": false,
+      "broken_loaded_images": [],
+      "fonts": "loaded"
+    },
+    {
+      "page": "index.html",
+      "viewport": [
+        768,
+        1024
+      ],
+      "client_width": 753,
+      "scroll_width": 753,
+      "overflow": false,
+      "broken_loaded_images": [],
+      "fonts": "loaded"
+    },
+    {
+      "page": "index.html",
+      "viewport": [
+        1366,
+        768
+      ],
+      "client_width": 1351,
+      "scroll_width": 1351,
+      "overflow": false,
+      "broken_loaded_images": [],
+      "fonts": "loaded"
+    },
+    {
+      "page": "index.html",
+      "viewport": [
+        1440,
+        900
+      ],
+      "client_width": 1425,
+      "scroll_width": 1425,
+      "overflow": false,
+      "broken_loaded_images": [],
+      "fonts": "loaded"
+    },
+    {
+      "page": "index.html",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "client_width": 1905,
+      "scroll_width": 1905,
+      "overflow": false,
+      "broken_loaded_images": [],
+      "fonts": "loaded"
+    },
+    {
+      "page": "clientflow.html",
+      "viewport": [
+        360,
+        800
+      ],
+      "client_width": 345,
+      "scroll_width": 345,
+      "overflow": false,
+      "broken_loaded_images": [],
+      "fonts": "loaded"
+    },
+    {
+      "page": "clientflow.html",
+      "viewport": [
+        375,
+        812
+      ],
+      "client_width": 360,
+      "scroll_width": 360,
+      "overflow": false,
+      "broken_loaded_images": [],
+      "fonts": "loaded"
+    },
+    {
+      "page": "clientflow.html",
+      "viewport": [
+        390,
+        844
+      ],
+      "client_width": 375,
+      "scroll_width": 375,
+      "overflow": false,
+      "broken_loaded_images": [],
+      "fonts": "loaded"
+    },
+    {
+      "page": "clientflow.html",
+      "viewport": [
+        430,
+        932
+      ],
+      "client_width": 415,
+      "scroll_width": 415,
+      "overflow": false,
+      "broken_loaded_images": [],
+      "fonts": "loaded"
+    },
+    {
+      "page": "clientflow.html",
+      "viewport": [
+        768,
+        1024
+      ],
+      "client_width": 753,
+      "scroll_width": 753,
+      "overflow": false,
+      "broken_loaded_images": [],
+      "fonts": "loaded"
+    },
+    {
+      "page": "clientflow.html",
+      "viewport": [
+        1366,
+        768
+      ],
+      "client_width": 1351,
+      "scroll_width": 1351,
+      "overflow": false,
+      "broken_loaded_images": [],
+      "fonts": "loaded"
+    },
+    {
+      "page": "clientflow.html",
+      "viewport": [
+        1440,
+        900
+      ],
+      "client_width": 1425,
+      "scroll_width": 1425,
+      "overflow": false,
+      "broken_loaded_images": [],
+      "fonts": "loaded"
+    },
+    {
+      "page": "clientflow.html",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "client_width": 1905,
+      "scroll_width": 1905,
+      "overflow": false,
+      "broken_loaded_images": [],
+      "fonts": "loaded"
+    },
+    {
+      "page": "contact.html",
+      "viewport": [
+        360,
+        800
+      ],
+      "client_width": 345,
+      "scroll_width": 345,
+      "overflow": false,
+      "broken_loaded_images": [],
+      "fonts": "loaded"
+    },
+    {
+      "page": "contact.html",
+      "viewport": [
+        375,
+        812
+      ],
+      "client_width": 360,
+      "scroll_width": 360,
+      "overflow": false,
+      "broken_loaded_images": [],
+      "fonts": "loaded"
+    },
+    {
+      "page": "contact.html",
+      "viewport": [
+        390,
+        844
+      ],
+      "client_width": 375,
+      "scroll_width": 375,
+      "overflow": false,
+      "broken_loaded_images": [],
+      "fonts": "loaded"
+    },
+    {
+      "page": "contact.html",
+      "viewport": [
+        430,
+        932
+      ],
+      "client_width": 415,
+      "scroll_width": 415,
+      "overflow": false,
+      "broken_loaded_images": [],
+      "fonts": "loaded"
+    },
+    {
+      "page": "contact.html",
+      "viewport": [
+        768,
+        1024
+      ],
+      "client_width": 753,
+      "scroll_width": 753,
+      "overflow": false,
+      "broken_loaded_images": [],
+      "fonts": "loaded"
+    },
+    {
+      "page": "contact.html",
+      "viewport": [
+        1366,
+        768
+      ],
+      "client_width": 1351,
+      "scroll_width": 1351,
+      "overflow": false,
+      "broken_loaded_images": [],
+      "fonts": "loaded"
+    },
+    {
+      "page": "contact.html",
+      "viewport": [
+        1440,
+        900
+      ],
+      "client_width": 1425,
+      "scroll_width": 1425,
+      "overflow": false,
+      "broken_loaded_images": [],
+      "fonts": "loaded"
+    },
+    {
+      "page": "contact.html",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "client_width": 1905,
+      "scroll_width": 1905,
+      "overflow": false,
+      "broken_loaded_images": [],
+      "fonts": "loaded"
+    },
+    {
+      "page": "prices.html",
+      "viewport": [
+        360,
+        800
+      ],
+      "client_width": 345,
+      "scroll_width": 345,
+      "overflow": false,
+      "broken_loaded_images": [],
+      "fonts": "loaded"
+    },
+    {
+      "page": "prices.html",
+      "viewport": [
+        430,
+        932
+      ],
+      "client_width": 415,
+      "scroll_width": 415,
+      "overflow": false,
+      "broken_loaded_images": [],
+      "fonts": "loaded"
+    },
+    {
+      "page": "prices.html",
+      "viewport": [
+        1440,
+        900
+      ],
+      "client_width": 1425,
+      "scroll_width": 1425,
+      "overflow": false,
+      "broken_loaded_images": [],
+      "fonts": "loaded"
+    },
+    {
+      "page": "privacy.html",
+      "viewport": [
+        360,
+        800
+      ],
+      "client_width": 345,
+      "scroll_width": 345,
+      "overflow": false,
+      "broken_loaded_images": [],
+      "fonts": "loaded"
+    },
+    {
+      "page": "privacy.html",
+      "viewport": [
+        430,
+        932
+      ],
+      "client_width": 415,
+      "scroll_width": 415,
+      "overflow": false,
+      "broken_loaded_images": [],
+      "fonts": "loaded"
+    },
+    {
+      "page": "privacy.html",
+      "viewport": [
+        1440,
+        900
+      ],
+      "client_width": 1425,
+      "scroll_width": 1425,
+      "overflow": false,
+      "broken_loaded_images": [],
+      "fonts": "loaded"
+    },
+    {
+      "page": "404.html",
+      "viewport": [
+        360,
+        800
+      ],
+      "client_width": 345,
+      "scroll_width": 345,
+      "overflow": false,
+      "broken_loaded_images": [],
+      "fonts": "loaded"
+    },
+    {
+      "page": "404.html",
+      "viewport": [
+        430,
+        932
+      ],
+      "client_width": 415,
+      "scroll_width": 415,
+      "overflow": false,
+      "broken_loaded_images": [],
+      "fonts": "loaded"
+    },
+    {
+      "page": "404.html",
+      "viewport": [
+        1440,
+        900
+      ],
+      "client_width": 1425,
+      "scroll_width": 1425,
+      "overflow": false,
+      "broken_loaded_images": [],
+      "fonts": "loaded"
+    },
+    {
+      "page": "index.html",
+      "viewport": [
+        1024,
+        768
+      ],
+      "client_width": 1009,
+      "scroll_width": 1009,
+      "overflow": false,
+      "broken_loaded_images": [],
+      "fonts": "loaded"
+    }
+  ]
+}
