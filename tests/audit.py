@@ -86,18 +86,19 @@ for name, page in pages.items():
             for ref in a.get(attribute,'').split(): require(ref in page.ids, f'{name}: invalid {attribute}={ref}')
 
 home = pages['index.html']
+repertoire = pages['repertoire.html']
 for anchor in ['inicio','solucoes','cases','repositorios','processo','proof-title','cta-title','year']:
     require(anchor in home.ids, f'Legacy home anchor missing: {anchor}')
 projects = json.loads((ROOT/'content/projects.json').read_text())
 audit = json.loads((ROOT/'docs/repository-audit.json').read_text())
-require(len(projects) == len(home.matching('a',**{'class':'repo-row'})) == 25, 'Full repertoire requires 25 entries')
+require(len(projects) == len(repertoire.matching('a',**{'class':'repo-row'})) == 25, 'Full repertoire requires 25 entries')
 require(sum(bool(p.get('featured')) for p in projects) == 10, 'Expected 10 featured cases')
 require(sum(bool(p.get('fork')) for p in projects) == 2, 'Expected two forks')
 require(audit['public_count'] == 26 and audit['repertoire_count'] == 25, 'Research counts must match evidence')
-require(len(home.matching('a',**{'data-kind':'fork'})) == 2, 'Both forks must be labeled in HTML')
+require(len(repertoire.matching('a',**{'data-kind':'fork'})) == 2, 'Both forks must be labeled in HTML')
 require(not any(p['repo'] == 'GabrielSantanaBR' for p in projects), 'Profile repository is not a project')
 for p in projects:
-    require(home.matching('a',**{'data-repo':p['repo']}), f'Missing repertoire entry {p["repo"]}')
+    require(repertoire.matching('a',**{'data-repo':p['repo']}), f'Missing repertoire entry {p["repo"]}')
     if p.get('page'):
         require(p['page'] in pages and p.get('evidence'), f'Missing case/evidence {p["repo"]}')
 require(next(p for p in projects if p['repo'] == 'projeto_academia').get('branch') == 'feat/mvp', 'Movimento evidence belongs to feat/mvp')

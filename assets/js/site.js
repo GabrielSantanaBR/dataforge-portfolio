@@ -84,6 +84,19 @@
     document.querySelectorAll('.reveal').forEach(el => { el.classList.add('is-pending'); observer.observe(el); });
   }
   const progress = document.querySelector('.scroll-progress');
+  const heroGraphic = document.querySelector('.hero-graphic');
+  let heroVisible = true;
+  const syncHeroMotion = () => heroGraphic?.classList.toggle('motion-paused', reduced.matches || document.hidden || !heroVisible);
+  if (heroGraphic && 'IntersectionObserver' in window) {
+    const heroObserver = new IntersectionObserver(entries => {
+      heroVisible = entries[0].isIntersecting;
+      syncHeroMotion();
+    });
+    heroObserver.observe(heroGraphic);
+  }
+  document.addEventListener('visibilitychange', syncHeroMotion);
+  reduced.addEventListener('change', syncHeroMotion);
+  syncHeroMotion();
   const animation = progress?.animate?.([{transform:'scaleX(0)'},{transform:'scaleX(1)'}], {duration:1000,fill:'both'});
   animation?.pause();
   let scheduled = false;

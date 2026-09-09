@@ -63,6 +63,8 @@ if (form) {
     for (const [name,text] of Object.entries(errors)) {
       const input = form.elements[name], note = document.getElementById(`${name}-error`);
       input.setAttribute('aria-invalid','true');
+      const optional = input.closest('details');
+      if (optional) optional.open = true;
       if (note) { note.textContent=text; note.hidden=false; }
     }
     if (Object.keys(errors).length || !form.reportValidity()) {
