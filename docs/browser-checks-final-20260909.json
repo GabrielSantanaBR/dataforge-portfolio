@@ -1,0 +1,401 @@
+[
+  {
+    "page": "index.html",
+    "width": 360,
+    "height": 800,
+    "clientWidth": 345,
+    "scrollWidth": 345,
+    "scrollHeight": 5178,
+    "overflow": [],
+    "brokenImages": [],
+    "deferredImages": [
+      "assets/previews/pata-companhia.png",
+      "assets/previews/nossas-delicias.png"
+    ],
+    "fonts": "loaded",
+    "heroActions": [
+      {
+        "text": "Pedir uma proposta↗",
+        "top": 393,
+        "width": 185
+      },
+      {
+        "text": "Ver projetos ↗",
+        "top": 398,
+        "width": 96
+      }
+    ],
+    "heroMotion": "hero-graphic"
+  },
+  {
+    "page": "index.html",
+    "width": 375,
+    "height": 812,
+    "clientWidth": 360,
+    "scrollWidth": 360,
+    "scrollHeight": 5121,
+    "overflow": [],
+    "brokenImages": [],
+    "deferredImages": [
+      "assets/previews/pata-companhia.png",
+      "assets/previews/nossas-delicias.png"
+    ],
+    "fonts": "loaded",
+    "heroActions": [
+      {
+        "text": "Pedir uma proposta↗",
+        "top": 393,
+        "width": 185
+      },
+      {
+        "text": "Ver projetos ↗",
+        "top": 398,
+        "width": 96
+      }
+    ],
+    "heroMotion": "hero-graphic"
+  },
+  {
+    "page": "index.html",
+    "width": 390,
+    "height": 844,
+    "clientWidth": 375,
+    "scrollWidth": 375,
+    "scrollHeight": 5064,
+    "overflow": [],
+    "brokenImages": [],
+    "deferredImages": [
+      "assets/previews/pata-companhia.png",
+      "assets/previews/nossas-delicias.png"
+    ],
+    "fonts": "loaded",
+    "heroActions": [
+      {
+        "text": "Pedir uma proposta↗",
+        "top": 395,
+        "width": 185
+      },
+      {
+        "text": "Ver projetos ↗",
+        "top": 399,
+        "width": 96
+      }
+    ],
+    "heroMotion": "hero-graphic"
+  },
+  {
+    "page": "index.html",
+    "width": 430,
+    "height": 932,
+    "clientWidth": 415,
+    "scrollWidth": 415,
+    "scrollHeight": 4981,
+    "overflow": [],
+    "brokenImages": [],
+    "deferredImages": [
+      "assets/previews/pata-companhia.png",
+      "assets/previews/nossas-delicias.png"
+    ],
+    "fonts": "loaded",
+    "heroActions": [
+      {
+        "text": "Pedir uma proposta↗",
+        "top": 405,
+        "width": 185
+      },
+      {
+        "text": "Ver projetos ↗",
+        "top": 410,
+        "width": 96
+      }
+    ],
+    "heroMotion": "hero-graphic"
+  },
+  {
+    "page": "index.html",
+    "width": 768,
+    "height": 1024,
+    "clientWidth": 753,
+    "scrollWidth": 753,
+    "scrollHeight": 3598,
+    "overflow": [],
+    "brokenImages": [],
+    "deferredImages": [],
+    "fonts": "loaded",
+    "heroActions": [
+      {
+        "text": "Pedir uma proposta↗",
+        "top": 396,
+        "width": 195
+      },
+      {
+        "text": "Ver projetos ↗",
+        "top": 401,
+        "width": 111
+      }
+    ],
+    "heroMotion": "hero-graphic"
+  },
+  {
+    "page": "index.html",
+    "width": 1024,
+    "height": 768,
+    "clientWidth": 1009,
+    "scrollWidth": 1009,
+    "scrollHeight": 3463,
+    "overflow": [],
+    "brokenImages": [],
+    "deferredImages": [],
+    "fonts": "loaded",
+    "heroActions": [
+      {
+        "text": "Pedir uma proposta↗",
+        "top": 493,
+        "width": 231
+      },
+      {
+        "text": "Ver projetos ↗",
+        "top": 498,
+        "width": 111
+      }
+    ],
+    "heroMotion": "hero-graphic"
+  },
+  {
+    "page": "index.html",
+    "width": 1366,
+    "height": 768,
+    "clientWidth": 1351,
+    "scrollWidth": 1351,
+    "scrollHeight": 3577,
+    "overflow": [],
+    "brokenImages": [],
+    "deferredImages": [],
+    "fonts": "loaded",
+    "heroActions": [
+      {
+        "text": "Pedir uma proposta↗",
+        "top": 510,
+        "width": 231
+      },
+      {
+        "text": "Ver projetos ↗",
+        "top": 515,
+        "width": 111
+      }
+    ],
+    "heroMotion": "hero-graphic"
+  },
+  {
+    "page": "index.html",
+    "width": 1440,
+    "height": 900,
+    "clientWidth": 1425,
+    "scrollWidth": 1425,
+    "scrollHeight": 3607,
+    "overflow": [],
+    "brokenImages": [],
+    "deferredImages": [],
+    "fonts": "loaded",
+    "heroActions": [
+      {
+        "text": "Pedir uma proposta↗",
+        "top": 515,
+        "width": 231
+      },
+      {
+        "text": "Ver projetos ↗",
+        "top": 520,
+        "width": 111
+      }
+    ],
+    "heroMotion": "hero-graphic"
+  },
+  {
+    "page": "index.html",
+    "width": 1920,
+    "height": 1080,
+    "clientWidth": 1905,
+    "scrollWidth": 1905,
+    "scrollHeight": 3668,
+    "overflow": [],
+    "brokenImages": [],
+    "deferredImages": [],
+    "fonts": "loaded",
+    "heroActions": [
+      {
+        "text": "Pedir uma proposta↗",
+        "top": 553,
+        "width": 231
+      },
+      {
+        "text": "Ver projetos ↗",
+        "top": 559,
+        "width": 111
+      }
+    ],
+    "heroMotion": "hero-graphic"
+  },
+  {
+    "page": "index.html#projetos",
+    "width": 360,
+    "height": 800,
+    "clientWidth": 345,
+    "scrollWidth": 345,
+    "scrollHeight": 5178,
+    "overflow": [],
+    "brokenImages": [],
+    "deferredImages": [],
+    "fonts": "loaded",
+    "heroActions": [
+      {
+        "text": "Pedir uma proposta↗",
+        "top": -1188,
+        "width": 185
+      },
+      {
+        "text": "Ver projetos ↗",
+        "top": -1183,
+        "width": 96
+      }
+    ],
+    "heroMotion": "hero-graphic motion-paused"
+  },
+  {
+    "page": "clientflow.html",
+    "width": 360,
+    "height": 800,
+    "clientWidth": 345,
+    "scrollWidth": 345,
+    "scrollHeight": 5308,
+    "overflow": [],
+    "brokenImages": [],
+    "deferredImages": [],
+    "fonts": "loaded",
+    "heroActions": []
+  },
+  {
+    "page": "pata-companhia.html",
+    "width": 360,
+    "height": 800,
+    "clientWidth": 345,
+    "scrollWidth": 345,
+    "scrollHeight": 4993,
+    "overflow": [],
+    "brokenImages": [],
+    "deferredImages": [],
+    "fonts": "loaded",
+    "heroActions": []
+  },
+  {
+    "page": "gestao-financeira.html",
+    "width": 360,
+    "height": 800,
+    "clientWidth": 345,
+    "scrollWidth": 345,
+    "scrollHeight": 5243,
+    "overflow": [],
+    "brokenImages": [],
+    "deferredImages": [],
+    "fonts": "loaded",
+    "heroActions": []
+  },
+  {
+    "page": "sicma.html",
+    "width": 360,
+    "height": 800,
+    "clientWidth": 345,
+    "scrollWidth": 345,
+    "scrollHeight": 2035,
+    "overflow": [],
+    "brokenImages": [],
+    "deferredImages": [],
+    "fonts": "loaded",
+    "heroActions": []
+  },
+  {
+    "page": "contact.html",
+    "width": 360,
+    "height": 800,
+    "clientWidth": 345,
+    "scrollWidth": 345,
+    "scrollHeight": 2290,
+    "overflow": [],
+    "brokenImages": [],
+    "deferredImages": [],
+    "fonts": "loaded",
+    "heroActions": []
+  },
+  {
+    "page": "repertoire.html",
+    "width": 360,
+    "height": 800,
+    "clientWidth": 345,
+    "scrollWidth": 345,
+    "scrollHeight": 8714,
+    "overflow": [],
+    "brokenImages": [],
+    "deferredImages": [
+      "assets/previews/finance-manager-anon.png",
+      "assets/previews/coffee-five.webp",
+      "assets/previews/pata-companhia.png"
+    ],
+    "fonts": "loaded",
+    "heroActions": []
+  },
+  {
+    "page": "repertoire.html",
+    "width": 1440,
+    "height": 900,
+    "clientWidth": 1425,
+    "scrollWidth": 1425,
+    "scrollHeight": 5767,
+    "overflow": [],
+    "brokenImages": [],
+    "deferredImages": [
+      "assets/previews/coffee-five.webp",
+      "assets/previews/pata-companhia.png"
+    ],
+    "fonts": "loaded",
+    "heroActions": []
+  },
+  {
+    "page": "sicma.html",
+    "width": 1440,
+    "height": 900,
+    "clientWidth": 1425,
+    "scrollWidth": 1425,
+    "scrollHeight": 1796,
+    "overflow": [],
+    "brokenImages": [],
+    "deferredImages": [],
+    "fonts": "loaded",
+    "heroActions": []
+  },
+  {
+    "page": "contact.html",
+    "width": 1440,
+    "height": 900,
+    "clientWidth": 1425,
+    "scrollWidth": 1425,
+    "scrollHeight": 1780,
+    "overflow": [],
+    "brokenImages": [],
+    "deferredImages": [],
+    "fonts": "loaded",
+    "heroActions": []
+  },
+  {
+    "page": "gestao-financeira.html",
+    "width": 1440,
+    "height": 900,
+    "clientWidth": 1425,
+    "scrollWidth": 1425,
+    "scrollHeight": 4291,
+    "overflow": [],
+    "brokenImages": [],
+    "deferredImages": [],
+    "fonts": "loaded",
+    "heroActions": []
+  }
+]

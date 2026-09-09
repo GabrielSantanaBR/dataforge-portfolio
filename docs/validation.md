@@ -1,4 +1,37 @@
-# Validação da reformulação MATRIZ
+# Revisão final: limpeza, imagens e mobile — 09/09/2026
+
+A limpeza inicial foi publicada na `main` em `302e4ff29b0bdb6508eebbd397beb9a694a87769`. Esta revisão aplica os novos materiais enviados pelo usuário e os achados visuais seguintes. Nenhum repositório dos projetos apresentados nem banco de dados foi modificado.
+
+## Resultado atual
+
+- 22 páginas HTML, 17 URLs indexáveis, 10 cases destacados e SICMA em desenvolvimento.
+- Seleção comercial com 11 repositórios. Exercícios, forks e práticas introdutórias não aparecem; o inventário histórico continua disponível para auditoria.
+- Nova logo PNG idêntica ao upload, verificada por SHA-256, em todos os usos da marca.
+- Capturas fornecidas de Pata & Companhia e Nossas Delícias sem alterações. Finance Manager anonimizado; ClientFlow com referência visual Bolos & Massas, identificada no card e na página. Imagens ampliáveis e apresentadas antes da explicação do case.
+- SICMA tem página própria e link para `GabrielSantanaBR/Sicma-JAVA`. A inspeção de 09/09 conferiu Java 17, Spring Boot e Gradle; a implementação do sistema ainda será enviada pelo autor.
+
+## Validação desta revisão
+
+`python3 tests/audit.py --dist` e os sete testes Node passaram. A auditoria cobre links, fragmentos, conteúdo selecionado, metadados, CSP, formulário, assets, marca e exclusão de código de teste do pacote público.
+
+Foram registradas **20 medições** em `browser-checks-final-20260909.json`, sem overflow e sem imagens carregadas quebradas:
+
+- Home: 360, 375, 390, 430, 768, 1024, 1366, 1440 e 1920 pixels.
+- Home na seção de projetos: 360 pixels, com todas as capturas carregadas e a animação do hero pausada fora da tela.
+- ClientFlow, Pata & Companhia, Finance Manager, SICMA, contato e portfólio: 360 pixels.
+- Portfólio, SICMA, contato e Finance Manager: 1440 pixels.
+
+A inspeção visual conferiu a nova logo, hierarquia do hero, botões lado a lado em 360 pixels, cartões com imagem, foco no link de ampliação e recortes. Capturas finais em `qa/matriz-final-*.jpg`. Medições no Chromium com viewports CSS; Safari, aparelhos físicos e leitores de tela não foram testados.
+
+O menu mobile abriu e fechou com Escape. O filtro Backend apresentou apenas SICMA e Todos recuperou 11 itens. A navegação para o SICMA exibiu o link público correto. Os testes de movimento reduzido passaram; não houve emulação da preferência do sistema operacional.
+
+A falha de contato foi simulada em uma rota local com submissão e rede externas bloqueadas, após conferir o indicador de simulador e a inicialização do formulário. O botão voltou habilitado com a seta decorativa preservada e oculta para tecnologia assistiva. Essa correção evita a perda de alinhamento que ocorria ao restaurar o texto após uma falha. A revisão atual não enviou mensagens externas; o registro abaixo mantém o ocorrido na primeira rodada.
+
+A home prioriza necessidade, seleção visual e proposta, com animações leves. Não há métricas que comprovem aumento de conversão; esta revisão melhora apresentação e caminho de contato sem prometer vendas.
+
+---
+
+# Histórico: primeira reformulação MATRIZ
 
 Rodada de 08–09/09/2026. A publicação parte do repositório existente; nenhuma aplicação de terceiros ou base de dados foi alterada.
 

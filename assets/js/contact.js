@@ -4,6 +4,7 @@ if (form) {
   form.dataset.enhanced = 'true';
   const status = document.getElementById('form-status');
   const button = form.querySelector('[type=submit]');
+  const buttonLabel = [...button.childNodes].map(node => node.cloneNode(true));
   const params = new URLSearchParams(location.search);
   const requestedService = params.get('service');
   const mapped = Object.hasOwn(SERVICE_LABELS,requestedService) ? requestedService : (Object.hasOwn(LEGACY_SERVICES,requestedService) ? LEGACY_SERVICES[requestedService] : undefined);
@@ -53,7 +54,7 @@ if (form) {
       else if (error.message === 'RATE_LIMIT') message('O serviço recebeu muitas tentativas. Aguarde um pouco e tente novamente.','error');
       else message('Não foi possível enviar agora. Seus campos foram preservados. Tente novamente ou use o LinkedIn indicado nesta página.','error');
     } finally {
-      sending=false;button.disabled=false;button.textContent='Enviar para a MATRIZ ↗';form.removeAttribute('aria-busy');
+      sending=false;button.disabled=false;button.replaceChildren(...buttonLabel.map(node => node.cloneNode(true)));form.removeAttribute('aria-busy');
     }
   });
 }

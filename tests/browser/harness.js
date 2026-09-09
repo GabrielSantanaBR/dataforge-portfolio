@@ -15,5 +15,5 @@ document.getElementById('measure').addEventListener('click',async()=>{
   }).map(e=>e.tagName+'.'+e.className);
   const imgs=[...doc.images].filter(i=>i.complete&&!i.naturalWidth).map(i=>i.getAttribute('src'));
   const deferred=[...doc.images].filter(i=>!i.complete).map(i=>i.getAttribute('src'));
-  document.getElementById('report').textContent=JSON.stringify({width:win.innerWidth,height:win.innerHeight,clientWidth:doc.documentElement.clientWidth,scrollWidth:doc.documentElement.scrollWidth,overflow:over,brokenImages:imgs,deferredImages:deferred,fonts:doc.fonts.status});
+  document.getElementById('report').textContent=JSON.stringify({width:win.innerWidth,height:win.innerHeight,clientWidth:doc.documentElement.clientWidth,scrollWidth:doc.documentElement.scrollWidth,scrollHeight:doc.documentElement.scrollHeight,overflow:over,brokenImages:imgs,deferredImages:deferred,fonts:doc.fonts.status,heroActions:[...doc.querySelectorAll('.hero .actions a')].map(e=>({text:e.textContent,top:Math.round(e.getBoundingClientRect().top),width:Math.round(e.getBoundingClientRect().width)})),heroMotion:doc.querySelector('.hero-graphic')?.className});
 });

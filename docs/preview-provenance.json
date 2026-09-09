@@ -1,0 +1,37 @@
+{
+  "date": "2026-09-09",
+  "review": "Capturas editadas inspecionadas visualmente; originais privados não incluídos no repositório nem na saída publicada.",
+  "assets": [
+    {
+      "file": "assets/previews/pata-companhia.png",
+      "source": "Captura do projeto fornecida pelo usuário em 09/09/2026",
+      "edits": [],
+      "sha256": "b93bfc19d2b492bd480445510a774fa72dbadbad98153a6dc63a48e310ba7981"
+    },
+    {
+      "file": "assets/previews/nossas-delicias.png",
+      "source": "Captura do projeto fornecida pelo usuário em 09/09/2026",
+      "edits": [],
+      "sha256": "5c17846523112957e2eb2d82ff3629a50c77ecc22c6f0982058b9708c6439973"
+    },
+    {
+      "file": "assets/previews/finance-manager-anon.png",
+      "source": "Captura financeira fornecida pelo usuário; edição com imagegen",
+      "edits": [
+        "Marca substituída por Finance Manager / FM; organização por Empresa Exemplo / Unidade central.",
+        "Nome do usuário substituído por Administrador; avatar A; área Departamentos.",
+        "Valores financeiros e gráficos editados para dados demonstrativos."
+      ],
+      "sha256": "f8cd73f2bced7f09e8d96dbeb4d58daf0d238829fc645ebe2464683b292cd2f7"
+    },
+    {
+      "file": "assets/previews/clientflow-concept.png",
+      "source": "Painel de operação fornecido pelo usuário; edição com imagegen",
+      "edits": [
+        "Marca substituída por Bolos & Massas.",
+        "Uso no ClientFlow identificado como referência visual adaptada, não como captura do protótipo."
+      ],
+      "sha256": "2ca878f17d3ae1d5db34a313a4c197975d5e8e19350a674854737253532953db"
+    }
+  ]
+}

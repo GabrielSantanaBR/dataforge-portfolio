@@ -34,8 +34,8 @@ class Page(HTMLParser):
         return [a for t,a in self.nodes if t == tag and all(a.get(k) == v for k,v in attrs.items())]
 
 pages = {p.name: Page(p) for p in sorted(PUBLIC.glob('*.html'))}
-require(len(pages) == 21, 'Expected all 21 public HTML pages')
-for required in ['index.html','prices.html','contact.html','thanks.html','404.html','project.html','privacy.html','security.html','repertoire.html']:
+require(len(pages) == 22, 'Expected all 22 public HTML pages')
+for required in ['index.html','prices.html','contact.html','thanks.html','404.html','project.html','privacy.html','security.html','repertoire.html','sicma.html']:
     require(required in pages, f'Missing required route {required}')
 
 def local_target(source, value):
@@ -63,7 +63,7 @@ for name, page in pages.items():
         require(any(a.get('content') for a in page.matching('meta',property=key)), f'{name}: {key}')
     require(page.matching('meta',property='og:url',content=expected), f'{name}: OG URL')
     require(not re.search(r'\bDataForge\b',' '.join(page.text),re.I), f'{name}: obsolete visible brand')
-    require(page.matching('link',rel='icon',type='image/svg+xml'), f'{name}: SVG favicon')
+    require(page.matching('link',rel='icon',type='image/png'), f'{name}: PNG favicon')
     csp_nodes = page.matching('meta',**{'http-equiv':'Content-Security-Policy'})
     csp = csp_nodes[0].get('content','') if csp_nodes else ''
     directives = dict((tokens[0],' '.join(tokens[1:])) for part in csp.split(';') if (tokens := part.strip().split()))
@@ -89,13 +89,14 @@ home = pages['index.html']
 repertoire = pages['repertoire.html']
 for anchor in ['inicio','solucoes','cases','repositorios','processo','proof-title','cta-title','year']:
     require(anchor in home.ids, f'Legacy home anchor missing: {anchor}')
-projects = json.loads((ROOT/'content/projects.json').read_text())
+all_projects = json.loads((ROOT/'content/projects.json').read_text())
+projects = [p for p in all_projects if p.get('listed',True)]
 audit = json.loads((ROOT/'docs/repository-audit.json').read_text())
-require(len(projects) == len(repertoire.matching('a',**{'class':'repo-row'})) == 25, 'Full repertoire requires 25 entries')
+require(len(projects) == len(repertoire.matching('a',**{'class':'repo-row'})) == 11, 'Curated portfolio requires 11 entries')
 require(sum(bool(p.get('featured')) for p in projects) == 10, 'Expected 10 featured cases')
-require(sum(bool(p.get('fork')) for p in projects) == 2, 'Expected two forks')
+require(not any(p.get('fork') or p['category']=='Estudos' for p in projects), 'Course exercises and forks must not appear in the commercial portfolio')
 require(audit['public_count'] == 26 and audit['repertoire_count'] == 25, 'Research counts must match evidence')
-require(len(repertoire.matching('a',**{'data-kind':'fork'})) == 2, 'Both forks must be labeled in HTML')
+require(not repertoire.matching('a',**{'data-kind':'fork'}), 'Forks must not appear in the selected HTML')
 require(not any(p['repo'] == 'GabrielSantanaBR' for p in projects), 'Profile repository is not a project')
 for p in projects:
     require(repertoire.matching('a',**{'data-repo':p['repo']}), f'Missing repertoire entry {p["repo"]}')
@@ -133,20 +134,18 @@ for js in [*(PUBLIC/'assets/js').glob('*.js'), ROOT/'server.mjs']:
     require(not re.search(r'\.innerHTML\s*=|\beval\s*\(',js.read_text()), f'{js.name}: unsafe dynamic HTML/eval')
 
 provenance = json.loads((ROOT/'docs/brand-provenance.json').read_text())
-for file in ['logo-matriz.svg','favicon.svg']:
-    svg = ET.parse(PUBLIC/'assets/brand'/file).getroot()
-    paths = [p.attrib for p in svg.iter() if p.tag.endswith('}path')]
-    require(len(paths) == provenance['path_count'] == 114, f'{file}: original path count')
-    digest = hashlib.sha256(json.dumps(paths,sort_keys=True).encode()).hexdigest()
-    require(digest == provenance['geometry_and_paint_sha256'], f'{file}: logo geometry/paint changed')
-    require(svg.get('viewBox') == '0 0 1254 1254', f'{file}: logo proportions')
-for file,size in [('social-matriz.png',(1200,630)),('favicon-32.png',(32,32)),('apple-touch-icon.png',(180,180)),('icon-192.png',(192,192)),('icon-512.png',(512,512))]:
-    data = (PUBLIC/'assets/brand'/file).read_bytes()
-    require(data[:8] == b'\x89PNG\r\n\x1a\n' and struct.unpack('>II',data[16:24]) == size, f'{file}: PNG dimensions')
+logo=PUBLIC/provenance['file']
+data=logo.read_bytes()
+require(hashlib.sha256(data).hexdigest()==provenance['sha256'], 'The supplied logo must be preserved byte-for-byte')
+require(data[:8]==b'\x89PNG\r\n\x1a\n' and struct.unpack('>II',data[16:24])==tuple(provenance['dimensions']), 'Logo dimensions')
+for page in pages.values():
+    require(page.matching('meta',property='og:image',content=BASE+provenance['file']), 'Sharing image must use the supplied logo')
+for old in ['logo-matriz.svg','favicon.svg','social-matriz.png']:
+    require(not (PUBLIC/'assets/brand'/old).exists(), 'Obsolete brand asset remains: '+old)
 for font in (PUBLIC/'assets/fonts').glob('*.woff2'): require(font.read_bytes()[:4] == b'wOF2', f'{font.name}: invalid WOFF2')
 locs = {n.text for n in ET.parse(PUBLIC/'sitemap.xml').getroot().iter() if n.tag.endswith('}loc')}
 expected = {BASE+('' if name == 'index.html' else name) for name,page in pages.items() if not page.matching('meta',name='robots',content='noindex,follow')}
-require(locs == expected and len(locs) == 18, 'Sitemap must contain all 18 indexable routes')
+require(locs == expected and len(locs) == 17, 'Sitemap must contain all 17 indexable routes')
 require(f'Sitemap: {BASE}sitemap.xml' in (PUBLIC/'robots.txt').read_text(), 'Wrong robots sitemap')
 require(f'Contact: {BASE}contact.html' in (PUBLIC/'.well-known/security.txt').read_text(), 'security.txt contact')
 secret = re.compile(r'(sk-[A-Za-z0-9_-]{20,}|ghp_[A-Za-z0-9]{30,}|github_pat_[A-Za-z0-9_]{30,}|AKIA[0-9A-Z]{16}|AIza[0-9A-Za-z_-]{30,}|-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----)')
@@ -157,6 +156,6 @@ for path in scan: require(not secret.search(path.read_text()), f'Potential privi
 if '--dist' in sys.argv:
     for forbidden in ['tests','scripts','docs','content','.git','.env','server.mjs','package.json','README.md']:
         require(not (PUBLIC/forbidden).exists(), f'Source included in public output: {forbidden}')
-    require((PUBLIC/'dataforge-portfolio/assets/brand/logo-matriz.svg').exists(), 'Deep 404 compatibility assets missing')
+    require((PUBLIC/'dataforge-portfolio/assets/brand/logo-matriz.png').exists(), 'Deep 404 compatibility assets missing')
 if failures: raise SystemExit('Release audit failed:\n'+'\n'.join(failures))
-print(f'Release audit passed: {len(pages)} pages, 25 repositories, 10 featured cases, 18 sitemap URLs; links, anchors, SEO, CSP, form, original logo and assets verified.')
+print(f'Release audit passed: {len(pages)} pages, 11 selected repositories, 10 featured cases, 17 sitemap URLs; links, anchors, SEO, CSP, form, original logo and assets verified.')

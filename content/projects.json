@@ -53,7 +53,14 @@
       "app.js",
       "docs/ARCHITECTURE.md"
     ],
-    "runtime_note": "ReferenceError: Cannot access clone before initialization; app.js calls loadState before the const clone assignment."
+    "runtime_note": "ReferenceError: Cannot access clone before initialization; app.js calls loadState before the const clone assignment.",
+    "listed": true,
+    "image": "assets/previews/clientflow-concept.png",
+    "image_width": 1733,
+    "image_height": 908,
+    "image_alt": "Referência visual de um painel de operação com a marca fictícia Bolos & Massas.",
+    "image_note": "Referência visual adaptada do painel de operação de Nossas Delícias. Não representa a interface atual do ClientFlow.",
+    "image_kind": "concept"
   },
   {
     "repo": "decisionforge-ai",
@@ -110,7 +117,8 @@
       "app/services/pipeline.py",
       "app/main.py",
       "pyproject.toml"
-    ]
+    ],
+    "listed": true
   },
   {
     "repo": "nossas-delicias-site",
@@ -167,7 +175,13 @@
       "store/urls.py",
       "store/views_management.py",
       "requirements.txt"
-    ]
+    ],
+    "listed": true,
+    "image": "assets/previews/nossas-delicias.png",
+    "image_width": 1898,
+    "image_height": 854,
+    "image_alt": "Página inicial de Nossas Delícias com catálogo e personalização de bolos.",
+    "image_note": "Captura da interface fornecida pelo autor do projeto."
   },
   {
     "repo": "curtailment-intelligence",
@@ -224,7 +238,8 @@
       "ml/modeling.py",
       "app/services/optimizer.py",
       "docs/PROJECT_STATUS.md"
-    ]
+    ],
+    "listed": true
   },
   {
     "repo": "projeto_academia",
@@ -283,7 +298,8 @@
       "src/lib/permissions.ts",
       "src/lib/attention.ts",
       "prisma/schema.prisma"
-    ]
+    ],
+    "listed": true
   },
   {
     "repo": "finance-manager",
@@ -341,7 +357,14 @@
       "accounts/models.py",
       "dashboard/views.py",
       "requirements.txt"
-    ]
+    ],
+    "listed": true,
+    "image": "assets/previews/finance-manager-anon.png",
+    "image_width": 1727,
+    "image_height": 911,
+    "image_alt": "Painel financeiro com organização, usuário e valores substituídos por exemplos.",
+    "image_note": "Interface financeira anonimizada. A edição pública do repositório tem escopo reduzido.",
+    "image_kind": "anonymized"
   },
   {
     "repo": "bakery-manager",
@@ -396,7 +419,8 @@
       "README.md",
       "main.py",
       "demo/small-business-pricing-manager-demo.xlsx"
-    ]
+    ],
+    "listed": true
   },
   {
     "repo": "csv-sales-analyzer",
@@ -452,7 +476,8 @@
       "dashboard.py",
       "src/analyzer.py",
       "requirements.txt"
-    ]
+    ],
+    "listed": true
   },
   {
     "repo": "coffee_five_site",
@@ -512,7 +537,8 @@
     "image_width": 1348,
     "image_height": 926,
     "image_alt": "Captura do cardápio Coffee Five com navegação, fotografia, busca e filtros por categoria.",
-    "image_note": "Proposta de redesign, sem afirmação de contratação ou aprovação comercial. Capturada em 08/09/2026; conteúdo e preços pertencem à demonstração."
+    "image_note": "Proposta de redesign, sem afirmação de contratação ou aprovação comercial. Capturada em 08/09/2026; conteúdo e preços pertencem à demonstração.",
+    "listed": true
   },
   {
     "repo": "projeto-petshop",
@@ -566,7 +592,13 @@
       "README.md",
       "package.json",
       "src/App.tsx"
-    ]
+    ],
+    "listed": true,
+    "image": "assets/previews/pata-companhia.png",
+    "image_width": 1884,
+    "image_height": 983,
+    "image_alt": "Página inicial de Pata & Companhia com serviços e cuidados para pets.",
+    "image_note": "Captura da interface fornecida pelo autor do projeto."
   },
   {
     "repo": "institutional-site-template",
@@ -622,7 +654,8 @@
       "app/acesso-interno/page.tsx",
       "db/runtime.ts",
       "lib/site-content.ts"
-    ]
+    ],
+    "listed": false
   },
   {
     "repo": "riftpilot",
@@ -677,7 +710,8 @@
       "README.md",
       "services/analytics/src/riftpilot_analytics/api/routes/live_game.py",
       "services/analytics/pyproject.toml"
-    ]
+    ],
+    "listed": false
   },
   {
     "repo": "url-shortener-api",
@@ -694,7 +728,8 @@
       "README.md",
       "api.py",
       "database.py"
-    ]
+    ],
+    "listed": false
   },
   {
     "repo": "hotmart_sites",
@@ -711,7 +746,8 @@
       "README.md",
       "index.html",
       "analytics.js"
-    ]
+    ],
+    "listed": false
   },
   {
     "repo": "projeto_excel_DIO",
@@ -725,7 +761,8 @@
     "evidence": [
       "README.md",
       "Desafio_DIO_Simulador_Investimentos_FIIs.xlsx"
-    ]
+    ],
+    "listed": false
   },
   {
     "repo": "Traducao_R_para_Python_UFF",
@@ -738,7 +775,8 @@
     ],
     "evidence": [
       "Codigos_traduzidos.py"
-    ]
+    ],
+    "listed": false
   },
   {
     "repo": "pequenos_projetos",
@@ -752,7 +790,8 @@
     "evidence": [
       "README.md",
       "intermediario/sistema_com_arquivos.py"
-    ]
+    ],
+    "listed": false
   },
   {
     "repo": "Conta_Bancaria",
@@ -766,7 +805,8 @@
     "evidence": [
       "README.md",
       "Sistema_Bancario_V3.py"
-    ]
+    ],
+    "listed": false
   },
   {
     "repo": "lab-natty-or-not",
@@ -779,22 +819,28 @@
     ],
     "evidence": [
       "README.md"
-    ]
+    ],
+    "listed": false
   },
   {
     "repo": "Sicma-JAVA",
-    "name": "Sicma · Java",
-    "category": "Estudos",
-    "status": "Estrutura inicial",
-    "summary": "Estrutura inicial Spring Boot; não há sistema de negócio completo demonstrado.",
+    "name": "SICMA",
+    "category": "Backend",
+    "status": "Em desenvolvimento",
+    "summary": "Projeto em Java e Spring Boot, com nova versão em preparação.",
     "stack": [
-      "Java",
-      "Spring Boot"
+      "Java 17",
+      "Spring Boot",
+      "Gradle"
     ],
     "evidence": [
       "demo/demo/build.gradle",
-      "demo/demo/src/main/java/com/example/demo/DemoApplication.java"
-    ]
+      "demo/demo/src/main/java/com/example/demo/DemoApplication.java",
+      "demo/demo/src/main/resources/application.properties"
+    ],
+    "listed": true,
+    "page": "sicma.html",
+    "service": "sistemas"
   },
   {
     "repo": "Pluvia",
@@ -807,7 +853,8 @@
     ],
     "evidence": [
       "project.godot"
-    ]
+    ],
+    "listed": false
   },
   {
     "repo": "projeto-barbearia",
@@ -816,7 +863,8 @@
     "status": "Repositório vazio",
     "summary": "Repositório reservado, sem código ou branches na inspeção. Não apresentado como produto.",
     "stack": [],
-    "evidence": []
+    "evidence": [],
+    "listed": false
   },
   {
     "repo": "project-nomad",
@@ -826,7 +874,8 @@
     "fork": true,
     "summary": "Fork de Crosstalk-Solutions/project-nomad. Referência de estudo em ferramentas offline; autoria original de terceiros.",
     "stack": [],
-    "evidence": []
+    "evidence": [],
+    "listed": false
   },
   {
     "repo": "LibreSprite",
@@ -836,7 +885,8 @@
     "fork": true,
     "summary": "Fork de LibreSprite/LibreSprite. Editor de pixel art de terceiros; não é um produto desenvolvido pela MATRIZ.",
     "stack": [],
-    "evidence": []
+    "evidence": [],
+    "listed": false
   },
   {
     "repo": "dataforge-portfolio",
@@ -852,6 +902,7 @@
     "evidence": [
       "README.md",
       "index.html"
-    ]
+    ],
+    "listed": false
   }
 ]
